@@ -33,8 +33,7 @@ body {
 
 .hero-header {
   text-align: center;
-  height: 200px;
-  padding-top: 10%;
+  height: 250px;
   text-transform: uppercase;
   color: #fff;
   .main-text {
@@ -69,7 +68,9 @@ body {
 /*----- Para -----*/
 
 .div-one {
-  min-height: 400px;
+  min-height: 270px;
+  margin-right: 30px;
+  margin-left: 30px;
   color: #fff;
 }
 
@@ -94,7 +95,7 @@ body {
 }
 @media screen and (min-width: 420px){
   .hero-header {
-    height: 500px
+    height: 300px
   }
 }
 
@@ -171,10 +172,9 @@ body {
 #footer {
   clear: both;
   position: absolute;
-  right: 0;
   bottom: 0;
+  right: 0;
   left: 0;
-  z-index: 10;
   height: 3em;
   margin-top: -3em;
   background-color: black;
@@ -189,4 +189,24 @@ body {
       display: inline;
     }
   }
+}
+
+#footer li:last-child {
+  margin-right: 0px;
+  display: none;
+}
+@media screen and (min-width: 420px){
+  #footer li:last-child {
+    display: inline-block;
+  }
+}
+
+/*----- Sessions -----*/
+
+.sign-in {
+  height: 530px;
+}
+
+.sign-up {
+  height: 530px;
 }
