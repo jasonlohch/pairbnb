@@ -19,7 +19,7 @@ class Clearance::UsersController < Clearance::BaseController
 
     if @user.save
       sign_in @user
-      render template: "users/show"
+      redirect_to @user
     else
       render template: "users/new"
     end

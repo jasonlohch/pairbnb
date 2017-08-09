@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
 
-
-
   root 'welcome#index'
 
   resources :passwords, controller: "clearance/passwords", only: [:create, :new]
@@ -20,4 +18,6 @@ Rails.application.routes.draw do
   get "/auth/:provider/callback" => "sessions#create_from_omniauth"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :users, controller: "users", only: [:show, :edit, :update]
+
+  resources :listings
 end
