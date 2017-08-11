@@ -2,29 +2,46 @@
 <html>
 <head>
   <title>Pairbnb</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => 'reload' %>
   <%= csrf_meta_tags %>
   <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-
 <%= render partial: "layouts/navbar" %>
 
-  <%= yield %>
+<div class="container-fluid text-center">    
+  <div class="row content">
+    <div class="col-sm-2 sidenav">
+      <p><a href="#">Homes</a></p>
+      <p><a href="#">Experiences</a></p>
+      <p><a href="#">Featured Destinations</a></p>
+    </div>
+    <div class="col-sm-8 text-left"> 
 
+ <%= yield %>
 
-<div class="pusher"></div>
-<div id="footer">
-  <ul>
-    <li>About Us</li>
-    <li>Privacy</li>
-    <li>Terms</li>
-    <li>Contact Us</li>
-    <li>Signup for newsletter</li>
-  </ul>
+    </div>
+    <div class="col-sm-2 sidenav">
+      <div class="well">
+        <p>ADS</p>
+      </div>
+      <div class="well">
+        <p>ADS</p>
+      </div>
+    </div>
+  </div>
 </div>
+<br></br>
+<nav class="navbar">
+    <div class="container center">
+        <p>Company 2013. All Rights Reserved.</p>
+    </div>
+</nav>
 
 </body>
 </html>
+
+
+

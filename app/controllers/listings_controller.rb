@@ -1,15 +1,17 @@
 class ListingsController < ApplicationController
+	before_action :find_listing, only: [:show, :edit, :update, :destroy]
+	before_action :check_owner, only: [:edit, :update, :destroy]
 
 	def index
-    	@listings = Listing.all
+    	@listings = Listing.order("created_at DESC")
   	end
 
 	def show
-		@listing = Listing.find(params[:id])
+		
 	end
 
 	def new
-		@listing = Listing.new
+
 	end
 
 	def create
@@ -23,11 +25,11 @@ class ListingsController < ApplicationController
 	end
 
 	def edit
-		@listing = Listing.find(params[:id])
+		
 	end
 
 	def update
-		@listing = Listing.find(params[:id])
+		
 		if @listing.update(listing_params)
 			redirect_to @listing
 		else
@@ -36,16 +38,26 @@ class ListingsController < ApplicationController
 	end
 
 	def destroy
-		@listing = Listing.find(params[:id])
+		
 		@listing.destroy
-
 		redirect_to listings_path
 	end
 
 private
 
 	def listing_params
-		params.require(:listing).permit(:title, :description, :location)
+		params.require(:listing).permit(:title, :description, :location, :all_tags, :price, :country, :country_code, :property_type, :max_guests, :pictures)
+	end
+
+	def find_listing
+		@listing = Listing.find(params[:id])
+	end
+
+	def check_owner
+		@listing = Listing.find(params[:id])
+		if @listing.user != current_user
+		redirect_to listings_path
+		end	
 	end
 
 end

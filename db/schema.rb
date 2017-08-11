@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170809072611) do
+ActiveRecord::Schema.define(version: 20170810143043) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,7 +32,28 @@ ActiveRecord::Schema.define(version: 20170809072611) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "price"
+    t.string "property_type"
+    t.integer "max_guests"
+    t.string "country"
+    t.string "country_code"
+    t.json "pictures"
     t.index ["user_id"], name: "index_listings_on_user_id"
+  end
+
+  create_table "taggings", force: :cascade do |t|
+    t.bigint "listing_id"
+    t.bigint "tag_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["listing_id"], name: "index_taggings_on_listing_id"
+    t.index ["tag_id"], name: "index_taggings_on_tag_id"
+  end
+
+  create_table "tags", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -49,4 +70,6 @@ ActiveRecord::Schema.define(version: 20170809072611) do
 
   add_foreign_key "authentications", "users"
   add_foreign_key "listings", "users"
+  add_foreign_key "taggings", "listings"
+  add_foreign_key "taggings", "tags"
 end

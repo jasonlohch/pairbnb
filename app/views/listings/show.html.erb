@@ -1,17 +1,43 @@
-<div>
-<h1>
-  <%= @listing.title %>
-</h1>
- 
-<p>
-  <strong>Location:</strong>
-  <%= @listing.location %>
-</p>
+    <div class="container">
+        <div class="row">
+            <!-- Blog Entries Column -->
+            <div class="col-md-8">
 
-<p>
-	<strong>Description:</strong>
-	<%= @listing.description %>
-</p>
+                <h1 class="page-header">
+                    <%= @listing.title %>
+                    <small>From RM<%= @listing.price %> per night</small>
+                </h1>
+                <hr>
+                <%= image_tag("property1.jpg", :alt => "rss feed", :class => "img-responsive") %>
+                <hr>
+                <h3>
+                    Location: <small><%= @listing.location %></small>
+                </h3>
+                <p class="lead">
+                    Hosted by <%= @listing.user.name %>
+                </p>
+                <p><span class="glyphicon glyphicon-time"></span> Posted on <%= @listing.created_at %></p>
+                <h3>
+                	About this listing: <small><%= @listing.description %></small>
+                </h3>
 
-<h3><%= link_to 'Edit', edit_listing_path(@listing) %> | <%= link_to 'Delete', listing_path(@listing), method: :delete, data: { confirm: 'Are you sure?'} %> | <%= link_to 'All Listing', listings_path %></h3>
-</div>
+                <h3>
+                	Property type: <small><%= @listing.property_type %></small>
+                </h3>
+
+                <h3>
+                	Accomodates: <small><%= @listing.max_guests %></small>
+                </h3>
+
+                <p><%= @listing.all_tags%></p>
+                <% if @listing.user == current_user %>
+      			<button class="btn btn-default"><span class="glyphicon glyphicon-pencil"></span><%= link_to ' Edit', edit_listing_path(@listing) %></button>
+     			<button class="btn btn-default"><span class="glyphicon glyphicon-trash"></span><%= link_to ' Delete', listing_path(@listing), method: :delete, data: { confirm: 'Are you sure?'} %>
+      			<% end %>
+      			</button>
+                
+                <hr>
+                <h3><%= link_to 'All Listing', listings_path %></h3>
+            </div>
+        </div>
+      </div>

@@ -1,6 +1,10 @@
-<nav class="menu">
-  <ul class="active">
-    <li class="current-item"><%= link_to "Home", root_url %></li>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+  <div class="navbar-header">
+      <a class="navbar-brand" href="localhost:3000">Pairbnb</a>
+  </div>    
+  <ul class="nav navbar-nav">
+    <li class="active"><%= link_to "Home", listings_path %></li>
     <% if signed_in? %>
     <li><%= link_to "Profile", user_path(current_user) %></li>
     <li><%= link_to "Host", new_listing_path %></li>
@@ -10,6 +14,7 @@
     <li><%= link_to "Signup", sign_up_path %></li>
     <li><%= link_to "Sign in with Facebook", "/auth/facebook" %></li>
     <% end %>
-    <li><%= link_to "About Us", "#" %></li>
+    <li><%= link_to "About Us", root_url %></li>
   </ul>
+  </div>
 </nav>

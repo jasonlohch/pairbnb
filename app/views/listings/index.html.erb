@@ -1,22 +1,42 @@
-<div>
-<h1>All Listing</h1>
+    <div class="container">
 
+        <div class="row">
 
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Location</th>
-    <th colspan="2"></th>
-  </tr>
- 
-  <% @listings.each do |listing| %>
-    <tr>
-      <td><%= listing.title %></td>
-      <td><%= listing.location %></td>
-      <td><%= link_to 'Show', listing_path(listing) %></td>
-      <td><%= link_to 'Edit', edit_listing_path(listing) %></td>
-      <td><%= link_to 'Delete', listing_path(listing), method: :delete, data: { confirm: 'Are you sure?'} %></td>
-    </tr>
-  <% end %>
-</table>
-</div>
+            <!-- Blog Entries Column -->
+            <div class="col-md-8">
+            <% @listings.each do |listing| %>
+                <h1 class="page-header">
+                    <%= listing.title %>
+                    <small>From RM<%= listing.price %> per night</small>
+                </h1>
+
+                <!-- First Blog Post -->
+                <h2>
+                    Location: <small><%= listing.location %></small>
+                </h2>
+                <p class="lead">
+                    Hosted by <%= listing.user.name %>
+                </p>
+                <p><span class="glyphicon glyphicon-time"></span> Posted on <%= listing.created_at %></p>
+                <hr>
+                <%= image_tag("property1.jpg", :alt => "rss feed", :class => "img-responsive", :id => "index-img") %>
+                <hr>
+                <p><%= listing.all_tags%></p>
+                <button class="btn btn-default"><%= link_to 'Find Out More', listing_path(listing) %><span class="glyphicon glyphicon-chevron-right"></span></button>
+                <br></br>
+                <% end %>
+                <hr>
+
+                <!-- Pager -->
+                <ul class="pager">
+                    <li class="previous">
+                        <a href="#">&larr; Older</a>
+                    </li>
+                    <li class="next">
+                        <a href="#">Newer &rarr;</a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+      </div>
