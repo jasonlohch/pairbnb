@@ -7,7 +7,7 @@ class ListingsController < ApplicationController
   	end
 
 	def show
-		
+		@booking = @listing.bookings.new
 	end
 
 	def new

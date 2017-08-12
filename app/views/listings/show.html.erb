@@ -16,7 +16,7 @@
                 <p class="lead">
                     Hosted by <%= @listing.user.name %>
                 </p>
-                <p><span class="glyphicon glyphicon-time"></span> Posted on <%= @listing.created_at %></p>
+                <p><span class="glyphicon glyphicon-time"></span> Posted on <%= @listing.created_at.strftime('%d %B %Y') %></p>
                 <h3>
                 	About this listing: <small><%= @listing.description %></small>
                 </h3>
@@ -35,6 +35,9 @@
      			<button class="btn btn-default"><span class="glyphicon glyphicon-trash"></span><%= link_to ' Delete', listing_path(@listing), method: :delete, data: { confirm: 'Are you sure?'} %>
       			<% end %>
       			</button>
+                <h3>Book Now</h3>
+                <h4><%= @errors %></h4>
+                <%= render "bookings/form" %>
                 
                 <hr>
                 <h3><%= link_to 'All Listing', listings_path %></h3>

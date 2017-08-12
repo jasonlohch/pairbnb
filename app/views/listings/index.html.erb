@@ -1,7 +1,5 @@
     <div class="container">
-
         <div class="row">
-
             <!-- Blog Entries Column -->
             <div class="col-md-8">
             <% @listings.each do |listing| %>
@@ -17,7 +15,7 @@
                 <p class="lead">
                     Hosted by <%= listing.user.name %>
                 </p>
-                <p><span class="glyphicon glyphicon-time"></span> Posted on <%= listing.created_at %></p>
+                <p><span class="glyphicon glyphicon-time"></span> Posted on <%= listing.created_at.strftime('%d %B %Y')  %></p>
                 <hr>
                 <%= image_tag("property1.jpg", :alt => "rss feed", :class => "img-responsive", :id => "index-img") %>
                 <hr>

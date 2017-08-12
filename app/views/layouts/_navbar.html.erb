@@ -4,17 +4,17 @@
       <a class="navbar-brand" href="localhost:3000">Pairbnb</a>
   </div>    
   <ul class="nav navbar-nav">
-    <li class="active"><%= link_to "Home", listings_path %></li>
+    <li id="hover"><%= link_to "Homes", listings_path %></li>
     <% if signed_in? %>
-    <li><%= link_to "Profile", user_path(current_user) %></li>
-    <li><%= link_to "Host", new_listing_path %></li>
-    <li><%= link_to "Sign out", sign_out_path, method: :delete %></li> 
+    <li id="hover"><%= link_to "Profile", user_path(current_user) %></li>
+    <li id="hover"><%= link_to "Host", new_listing_path %></li>
+    <li id="hover"><%= link_to "Sign out", sign_out_path, method: :delete %></li> 
     <% else %>
-    <li><%= link_to "Login", sign_in_path %></li>
-    <li><%= link_to "Signup", sign_up_path %></li>
-    <li><%= link_to "Sign in with Facebook", "/auth/facebook" %></li>
+    <li id="hover"><%= link_to "Login", sign_in_path %></li>
+    <li id="hover"><%= link_to "Signup", sign_up_path %></li>
+    <li id="hover"><%= link_to "Sign in with Facebook", "/auth/facebook" %></li>
     <% end %>
-    <li><%= link_to "About Us", root_url %></li>
+    <li id="hover"><%= link_to "About Us", root_url %></li>
   </ul>
   </div>
 </nav>
