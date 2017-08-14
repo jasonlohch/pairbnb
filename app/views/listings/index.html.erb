@@ -17,7 +17,7 @@
                 </p>
                 <p><span class="glyphicon glyphicon-time"></span> Posted on <%= listing.created_at.strftime('%d %B %Y')  %></p>
                 <hr>
-                <%= image_tag("property1.jpg", :alt => "rss feed", :class => "img-responsive", :id => "index-img") %>
+                <%= image_tag listing.pictures.first, :alt => "rss feed", :class => "img-responsive"  %>
                 <hr>
                 <p><%= listing.all_tags%></p>
                 <button class="btn btn-default"><%= link_to 'Find Out More', listing_path(listing) %><span class="glyphicon glyphicon-chevron-right"></span></button>

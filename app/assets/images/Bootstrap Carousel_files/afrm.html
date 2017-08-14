@@ -1,0 +1,35 @@
+
+<!-- saved from url=(0115)https://fqwatlmddqun8e.ru/custom/afrm.htm?country=MY&u=14_1472017&s=adr160x600&a=28961&d=77337363686f6f6c732e636f6d -->
+<html style="width:100%;height:100%;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+</head>
+<body style="margin:0;padding:0;font-family:Tahoma;color:#000;width:100%;height:100%;" class="altAdvHere">
+<div id="content" style="width:100%;height:100%;"><iframe src="./saved_resource(4).html" width="100%" height="100%" scrolling="no" border="0" frameborder="0"></iframe></div>
+<script type="text/javascript">
+	function parse_str(str) {
+		var ex = str.split('&');
+		var exx, val;
+		var res = {};
+		try {
+			for (var i = 0; i < ex.length; i++) {
+				exx = ex[i].split('=');
+				val = (exx.length == 1) ? '' : exx[1];
+				res[exx[0]] = val;
+			}
+		} catch (e) {
+		}
+		return res;
+	}
+	var req = parse_str(document.location.search.substr(1));
+	if (req.s) {
+		req.s = (req.s == 'vknews' && document.body.offsetWidth < 500) ? 'vknews_group' : req.s.toLowerCase();
+		var j = new Date(),
+				a = j.getHours() + "_" + j.getDate() + j.getMonth() + j.getFullYear(),
+				s = document.createElement('script');
+		s.src = req.s + '.js?u=' + a;
+		document.body.appendChild(s);
+	}
+</script><script src="./adr160x600.js"></script>
+
+
+</body></html>

@@ -3,6 +3,8 @@ class Listing < ApplicationRecord
   has_many :taggings, dependent: :destroy
   has_many :tags, through: :taggings
   has_many :bookings
+  mount_uploaders :pictures, PictureUploader
+  serialize :pictures, Array
 
 
 	def all_tags=(names)

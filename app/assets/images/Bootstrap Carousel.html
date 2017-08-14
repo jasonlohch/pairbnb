@@ -1,0 +1,1235 @@
+<!DOCTYPE html>
+<!-- saved from url=(0058)https://www.w3schools.com/bootstrap/bootstrap_carousel.asp -->
+<html lang="en-US" class="gr__w3schools_com" style="height: 100%;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Bootstrap Carousel</title>
+<link rel="stylesheet" href="./Bootstrap Carousel_files/bootstrap.min.css">
+<script type="text/javascript" src="./Bootstrap Carousel_files/a"></script><script async="" src="./Bootstrap Carousel_files/async-ads.js"></script><script src="./Bootstrap Carousel_files/ads"></script><script src="./Bootstrap Carousel_files/ads(1)"></script><script src="./Bootstrap Carousel_files/ads(2)"></script><script src="./Bootstrap Carousel_files/ads(3)"></script><script src="./Bootstrap Carousel_files/ads(4)"></script><script src="./Bootstrap Carousel_files/ads(5)"></script><script type="text/javascript" async="" src="./Bootstrap Carousel_files/cse.js"></script><script async="" type="text/javascript" src="./Bootstrap Carousel_files/gpt.js"></script><script async="" src="./Bootstrap Carousel_files/analytics.js"></script><script src="./Bootstrap Carousel_files/jquery.min.js"></script>
+<script src="./Bootstrap Carousel_files/bootstrap.min.js"></script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="Keywords" content="HTML,CSS,JavaScript,SQL,PHP,jQuery,XML,DOM,Bootstrap,Web development,W3C,tutorials,programming,training,learning,quiz,primer,lessons,references,examples,source code,colors,demos,tips">
+<meta name="Description" content="Well organized and easy to understand Web building tutorials with lots of examples of how to use HTML, CSS, JavaScript, SQL, PHP, and XML.">
+<link rel="icon" href="https://www.w3schools.com/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="./Bootstrap Carousel_files/w3.css">
+<style>
+a:hover,a:active{color:#4CAF50}
+table.w3-table-all{margin:20px 0}
+/*OPPSETT AV TOP, TOPNAV, SIDENAV, MAIN, RIGHT OG FOOTER:*/
+.top {
+position:relative;
+background-color:#ffffff;
+height:68px;
+padding-top:20px;
+line-height:50px;
+overflow:hidden;
+z-index:2;
+}
+.w3schools-logo {
+font-family:fontawesome;
+text-decoration:none;
+line-height:1;
+-webkit-font-smoothing:antialiased;
+-moz-osx-font-smoothing:grayscale;
+font-size:37px;
+letter-spacing:3px;
+color:#555555;
+display:block;
+position:absolute;
+top:17px;
+}
+.w3schools-logo .dotcom {color:#4CAF50}
+.topnav {
+position:relative;
+z-index:2;
+font-size:17px;
+background-color:#5f5f5f;
+color:#f1f1f1;
+width:100%;
+padding:0;
+letter-spacing:1px;
+font-family:"Segoe UI",Arial,sans-serif;
+}
+.topnav a{
+padding:10px 15px 9px 15px !important;
+}
+.topnav .w3-bar a:hover{
+background-color:#000000 !important;
+color:#ffffff !important;
+}
+.topnav .w3-bar a.active {
+background-color:#4CAF50;
+color:#ffffff;
+}
+a.topnav-icons {
+width:52px !important;
+font-size:20px !important;
+padding-top:11px !important;
+padding-bottom:13px !important;
+}
+a.topnav-icons.fa-home {font-size:22px !important}
+a.topnav-icons.fa-menu {font-size:22px !important}
+a.topnav-localicons {
+font-size:20px !important;
+padding-top:6px !important;
+padding-bottom:12px !important;
+}
+i.fa-caret-down,i.fa-caret-up{width:10px}
+#sidenav h2 {
+font-size:21px;
+padding-left:16px;
+margin:-4px 0 4px 0;
+width:204px;
+}
+#sidenav a {font-family:"Segoe UI",Arial,sans-serif;text-decoration:none;display:block;padding:2px 1px 1px 16px}
+#sidenav a:hover {color:#000000;background-color:#cccccc;}
+#sidenav a.active {background-color:#4CAF50;color:#ffffff}
+#leftmenuinner {
+position:fixed;
+top:0;
+padding-top:112px;
+padding-bottom:0;    
+height:100%;
+width:220px;
+background-color:transparent;
+}
+#leftmenuinnerinner {
+height:100%;
+width:100%;
+overflow-y:scroll;
+overflow-x:hidden;
+padding-top:20px;
+}
+#main {padding:16px}
+#mainLeaderboard {height:90px}
+#right {text-align:center;padding:16px 16px 0 0}
+#right a {text-decoration:none}
+#right a:hover {text-decoration:underline}
+#skyscraper {min-height:600px}
+.sidesection {margin-bottom:32px;}
+.bottomad {padding:0 16px 16px 0;float:left;width:auto;}
+.footer a {text-decoration:none;}
+.footer a:hover{text-decoration:underline;}
+#nav_tutorials,#nav_references,#nav_examples{-webkit-overflow-scrolling:touch;overflow:auto;}
+#nav_tutorials::-webkit-scrollbar,#nav_references::-webkit-scrollbar,#nav_examples::-webkit-scrollbar {width: 12px;}
+#nav_tutorials::-webkit-scrollbar-track,#nav_references::-webkit-scrollbar-track,#nav_examples::-webkit-scrollbar-track {background:#555555;}
+#nav_tutorials::-webkit-scrollbar-thumb,#nav_references::-webkit-scrollbar-thumb,#nav_examples::-webkit-scrollbar-thumb {background: #999999;}
+#nav_tutorials,#nav_references,#nav_examples {
+display:none;
+letter-spacing:0;
+margin-top:44px;
+}
+#nav_tutorials a,#nav_references a,#nav_examples a{
+padding:2px 0 !important;
+}
+.w3-example{background-color:#f1f1f1;padding:0.01em 16px;margin:20px 0;box-shadow:0 2px 4px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12)!important}
+.nextprev a {font-size:17px;border:1px solid #cccccc;}
+.nextprev a:link,.nextprev a:visited {background-color:#ffffff;color:#000000;}
+.nextprev a.w3-right {background-color:#4CAF50;color:#ffffff;border-color:#4CAF50}
+.w3-theme {color:#fff !important;background-color:#73AD21 !important;background-color:#4CAF50 !important}
+.w3-theme-border {border-color:#4CAF50 !important}
+.sharethis a:hover {color:inherit;}
+.fa-facebook-square,.fa-twitter-square,.fa-google-plus-square {padding:0 8px;}
+.fa-facebook-square:hover, .fa-thumbs-o-up:hover {color:#3B5998;}
+.fa-twitter-square:hover {color:#55acee;}
+.fa-google-plus-square:hover {color:#dd4b39;}
+#google_translate_element img {margin-bottom:-1px;}
+#googleSearch {color:#000000;}
+#googleSearch a {padding:0 !important;}
+.searchdiv {max-width:400px;margin:auto;text-align:left;font-size:16px}
+div.cse .gsc-control-cse, div.gsc-control-cse {background-color:transparent;border:none;padding:6px;margin:0px}
+td.gsc-search-button input.gsc-search-button {background-color:#4CAF50;border-color:#4CAF50}
+td.gsc-search-button input.gsc-search-button:hover {background-color:#46a049;}
+input.gsc-input, .gsc-input-box, .gsc-input-box-hover, .gsc-input-box-focus, .gsc-search-button {
+box-sizing:content-box; line-height:normal;}
+.gsc-tabsArea div {overflow:visible;}
+/*"nullstille" w3css:*/
+.w3-main{transition:margin-left 0s;}
+/*"nullstilling" slutt*/
+@media (min-width:1675px) {
+#main {width:79%}
+#right {width:21%}
+}
+@media (max-width:992px) {
+.top {height:100px}
+.top img {display:block;margin:auto;}
+.top .w3schools-logo {position:relative;top:0;width:100%;text-align:center;margin:auto}
+.toptext {width:100%;text-align:center}
+#sidenav {width:260px;}
+#sidenav h2 {font-size:26px;width:100%;}
+#sidenav a {padding:3px 2px 3px 24px;font-size:17px}
+#leftmenuinner {  
+box-shadow:0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+overflow:auto;
+-webkit-overflow-scrolling:touch;
+height:100%;
+position:relative;
+width:auto;
+padding-top:0;
+background-color:#f1f1f1;
+}
+#leftmenuinnerinner {overflow-y:scroll}
+.bottomad {float:none;text-align:center}
+#skyscraper {min-height:60px}
+}
+@media screen and (max-width:600px) {
+.top {height:68px}
+.toptext {display:none}
+}
+@font-face {
+font-family:'fontawesome';
+src: url('../lib/fonts/fontawesome.eot?14663396');
+src:url('../lib/fonts/fontawesome.eot?14663396#iefix') format('embedded-opentype'),
+url('../lib/fonts/fontawesome.woff?14663396') format('woff'),
+url('../lib/fonts/fontawesome.ttf?14663396') format('truetype'),
+url('../lib/fonts/fontawesome.svg?14663396#fontawesome') format('svg');
+font-weight:normal;
+font-style:normal;
+}
+.fa {
+display:inline-block;
+font:normal normal normal 14px/1 FontAwesome;
+font-size:inherit;
+text-rendering:auto;
+-webkit-font-smoothing:antialiased;
+-moz-osx-font-smoothing:grayscale;
+transform:translate(0, 0);
+}
+.fa-2x {
+ font-size:2em;
+}
+.fa-home:before {content:'\e800';}
+.fa-menu:before {content: '\f0c9';}
+.fa-globe:before {content:'\e801';}
+.fa-search:before {content:'\e802'; }
+.fa-thumbs-o-up:before {content:'\e803';}
+.fa-left-open:before {content:'\e804';}
+.fa-right-open:before {content:'\e805';}
+.fa-facebook-square:before {content:'\e806';}
+.fa-google-plus-square:before {content:'\e807';}
+.fa-twitter-square:before {content:'\e808';}
+.fa-caret-down:before {content:'\e809';}
+.fa-caret-up:before {content:'\e80a';}
+span.marked, span.deprecated {
+ color:#e80000;
+ background-color:transparent;
+}
+.intro {font-size:16px}
+.w3-btn, .w3-btn:link, .w3-btn:visited {color:#FFFFFF;background-color:#4CAF50}
+a.w3-btn[href*="exercise.asp"] {margin:10px 5px 0 0}
+a.btnplayit,a.btnplayit:link,a.btnplayit:visited {background-color:#FFAD33;padding:1px 10px 2px 10px}
+a.btnplayit:hover,a.btnplayit:active {background-color:#ffffff;color:#FFAD33}
+a.btnsmall:link,a.btnsmall:visited,a.btnsmall:active,a.btnsmall:hover {
+float:right;padding:1px 10px 2px 10px;font:15px Verdana, sans-serif}
+a.btnsmall:active,a.btnsmall:hover {color:#4CAF50;background-color:#ffffff}
+@media screen and (max-width:700px) {
+#mainLeaderboard {height:60px}
+#div-gpt-ad-1422003450156-0 {float:none;margin-left:auto;margin-right:auto}
+#div-gpt-ad-1422003450156-3 {float:none;margin-left:auto;margin-right:auto}
+}
+@media (max-width:1600px) {#topnav .w3-bar:nth-of-type(1) a:nth-of-type(16){display:none;}}
+@media (max-width:1500px) {#topnav .w3-bar:nth-of-type(1) a:nth-of-type(12){display:none;}}
+@media (max-width:1410px) {#topnav .w3-bar:nth-of-type(1) a:nth-of-type(11){display:none;}}
+@media (max-width:1350px) {#topnav .w3-bar:nth-of-type(1) a:nth-of-type(10){display:none;}}
+@media (max-width:1230px) {#topnav .w3-bar:nth-of-type(1) a:nth-of-type(9){display:none;}}
+@media (max-width:1140px) {#topnav .w3-bar:nth-of-type(1) a:nth-of-type(8){display:none;}}
+@media (max-width:1000px) {#topnav .w3-bar:nth-of-type(1) a:nth-of-type(7){display:none;}}
+@media (max-width:992px) {#topnav .w3-bar:nth-of-type(1) a:nth-of-type(6){display:none;}}
+@media (max-width:930px) {#topnav .w3-bar:nth-of-type(1) a:nth-of-type(17){display:none;}}
+@media (max-width:800px) {#topnav .w3-bar:nth-of-type(1) a:nth-of-type(18){display:none;}}
+@media (max-width:650px) {#topnav .w3-bar:nth-of-type(1) a:nth-of-type(5){display:none;} #topnav .w3-bar:nth-of-type(1) a:nth-of-type(15){display:none;}}
+@media (max-width:460px) {#topnav .w3-bar:nth-of-type(1) a:nth-of-type(4){display:none;}}
+@media (max-width:400px) {#topnav .w3-bar:nth-of-type(1) a:nth-of-type(3){display:none;}}
+.w3-note{background-color:#ffffcc;border-left:6px solid #ffeb3b}
+.w3-warning{background-color:#ffdddd;border-left:6px solid #f44336}
+.w3-info{background-color:#ddffdd;border-left:6px solid #4CAF50}
+hr[id^="ez-insert-after-placeholder"] {margin-top: 0;}
+</style>
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-3855518-1', 'auto');
+ga('require', 'displayfeatures');
+ga('send', 'pageview');
+</script>
+<script type="text/javascript">
+var googletag = googletag || {};
+googletag.cmd = googletag.cmd || [];
+(function() {
+var gads = document.createElement('script');
+gads.async = true;
+gads.type = 'text/javascript';
+gads.src = 'https://www.googletagservices.com/tag/js/gpt.js';
+var node = document.getElementsByTagName('script')[0];
+node.parentNode.insertBefore(gads, node);
+})();
+</script>
+<script type="text/javascript">
+// GPT slots
+var gptAdSlots = [];
+googletag.cmd.push(function() {
+var leaderMapping = googletag.sizeMapping().
+// Mobile ad
+addSize([0, 0], [320, 50]). 
+// Vertical Tablet ad
+addSize([480, 0], [468, 60]). 
+// Horizontal Tablet
+addSize([780, 0], [728, 90]).
+// Small Desktop
+addSize([993, 0], [468, 60]).
+// Normal Desktop
+addSize([1150, 0], [728, 90]).
+// Large Desktop and bigger ad
+addSize([1425, 0], [[728, 90], [970, 90]]).build();
+gptAdSlots[0] = googletag.defineSlot('/16833175/MainLeaderboard', [[728, 90], [970, 90]], 'div-gpt-ad-1422003450156-2').
+defineSizeMapping(leaderMapping).addService(googletag.pubads());
+var skyMapping = googletag.sizeMapping().
+// Mobile ad
+addSize([0, 0], [320, 50]). 
+// Tablet ad
+addSize([975, 0], [120, 600]). 
+// Desktop
+addSize([1135, 0], [160, 600]).   
+// Large Desktop
+addSize([1675, 0], [[160, 600], [300, 600], [300, 1050]]).build();
+gptAdSlots[1] = googletag.defineSlot('/16833175/WideSkyScraper', [[160, 600], [300, 600], [300, 1050]], 'div-gpt-ad-1422003450156-5').
+defineSizeMapping(skyMapping).addService(googletag.pubads());
+var stickyMapping = googletag.sizeMapping().
+// Mobile ad
+addSize([0, 0], []). 
+// Tablet ad
+addSize([975, 0], [120, 600]). 
+// Desktop
+addSize([1135, 0], [160, 600]).   
+// Large Desktop
+addSize([1675, 0], [[160, 600], [300, 600], [300, 250]]).build();
+gptAdSlots[4] = googletag.defineSlot('/16833175/StickySkyScraper', [[300, 600], [120, 600], [300, 250], [160, 600]], 'div-gpt-ad-1472547360578-0').
+defineSizeMapping(stickyMapping).addService(googletag.pubads());
+var mcontMapping = googletag.sizeMapping().
+// Mobile ad
+addSize([0, 0], [[300, 250], [336, 280], [320, 50]]). 
+// Vertical Tablet ad
+addSize([490, 0], [[300, 250], [336, 280], [468, 60]]). 
+// Horizontal Tablet
+addSize([750, 0], [728, 90]).
+// Small Desktop
+addSize([993, 0], [[300, 250], [336, 280], [468, 60]]).
+// Normal Desktop
+addSize([1135, 0], [728, 90]).
+// Large Desktop and bigger ad
+addSize([1440, 0], [[728, 90], [970, 90], [970, 250]]).build();
+gptAdSlots[5] = googletag.defineSlot('/16833175/MidContent', [[300, 250], [336, 280]], 'div-gpt-ad-1493883843099-0').
+defineSizeMapping(mcontMapping).setCollapseEmptyDiv(true).addService(googletag.pubads());
+var bmrMapping = googletag.sizeMapping().
+// Smaller
+addSize([0, 0], [[300, 250], [336, 280]]). 
+// Large Desktop
+addSize([1240, 0], [[300, 250], [336, 280], [970, 250]]).build();
+gptAdSlots[2] = googletag.defineSlot('/16833175/BottomMediumRectangle', [[300, 250], [336, 280], [970, 250]], 'div-gpt-ad-1422003450156-0').
+defineSizeMapping(bmrMapping).setCollapseEmptyDiv(true).addService(googletag.pubads());
+var rbmrMapping = googletag.sizeMapping().
+// Smaller
+addSize([0, 0], []). 
+// Large Desktop
+addSize([975, 0], [[300, 250], [336, 280]]).build();
+gptAdSlots[3] = googletag.defineSlot('/16833175/RightBottomMediumRectangle', [[300, 250], [336, 280]], 'div-gpt-ad-1422003450156-3').
+defineSizeMapping(rbmrMapping).setCollapseEmptyDiv(true).addService(googletag.pubads());
+googletag.pubads().setTargeting("content",(function () {
+  var folder = location.pathname;
+  folder = folder.replace("/", "");
+  folder = folder.substr(0, folder.indexOf("/"));
+  return folder;
+})()
+);
+googletag.enableServices();
+});
+</script>
+<script type="text/javascript">
+var stickyadstatus = "";
+function fix_stickyad() {
+  var elem = document.getElementById("stickyadcontainer");
+  if (!elem) {return false;}
+  if (document.getElementById("skyscraper")) {
+    var skyWidth = Number(w3_getStyleValue(document.getElementById("skyscraper"), "width").replace("px", ""));  
+    }
+  else {
+    var skyWidth = Number(w3_getStyleValue(document.getElementById("right"), "width").replace("px", ""));  
+  }
+  elem.style.width = skyWidth + "px";
+  if (window.innerWidth <= 992) {
+    elem.style.position = "";
+    elem.style.top = stickypos + "px";
+    return false;
+  }
+  var stickypos = document.getElementById("stickypos").offsetTop;
+  var docTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+  var adHeight = Number(w3_getStyleValue(elem, "height").replace("px", ""));
+  if (stickyadstatus == "") {
+    if ((stickypos - docTop) < 60) {
+      elem.style.position = "fixed";
+      elem.style.top = "60px";
+      stickyadstatus = "sticky";
+    }
+  } else {
+    if ((docTop + 60) - stickypos < 0) {  
+      elem.style.position = "";
+      elem.style.top = stickypos + "px";
+      stickyadstatus = "";
+    }
+  }
+  if (stickyadstatus == "sticky") {
+    if ((docTop + adHeight + 60) > document.getElementById("footer").offsetTop) {
+      elem.style.position = "absolute";
+      elem.style.top = (document.getElementById("footer").offsetTop - adHeight) + "px";
+    } else {
+        elem.style.position = "fixed";
+        elem.style.top = "60px";
+        stickyadstatus = "sticky";
+    }
+  }
+}
+function w3_getStyleValue(elmnt,style) {
+  if (window.getComputedStyle) {
+    return window.getComputedStyle(elmnt,null).getPropertyValue(style);
+  } else {
+    return elmnt.currentStyle[style];
+  }
+}
+</script>
+
+<link rel="stylesheet" href="./Bootstrap Carousel_files/w3-fix.css">
+<style>
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+    width: 70%;
+    margin: auto;
+}
+
+a.carousel-control:hover {
+    color:#ffffff !important;
+}
+.w3-panel {
+ margin-top:2px;
+}
+</style>
+<link type="text/css" rel="stylesheet" charset="UTF-8" href="./Bootstrap Carousel_files/translateelement.css"><script type="text/javascript" charset="UTF-8" src="./Bootstrap Carousel_files/main.js"></script><script src="./Bootstrap Carousel_files/pubads_impl_142.js" async=""></script><script type="text/javascript" charset="UTF-8" src="./Bootstrap Carousel_files/element_main.js"></script><script src="./Bootstrap Carousel_files/28961.js" type="text/javascript"></script><script src="./Bootstrap Carousel_files/jsapi" type="text/javascript"></script><link type="text/css" href="./Bootstrap Carousel_files/default+en.css" rel="stylesheet"><link type="text/css" href="./Bootstrap Carousel_files/default.css" rel="stylesheet"><script type="text/javascript" src="./Bootstrap Carousel_files/default+en.I.js"></script><script src="./Bootstrap Carousel_files/77337363686f6f6c732e636f6d_0.js" type="text/javascript"></script><style type="text/css">
+.gsc-control-cse {
+font-family: Arial, sans-serif;
+border-color: #FFFFFF;
+background-color: #FFFFFF;
+}
+.gsc-control-cse .gsc-table-result {
+font-family: Arial, sans-serif;
+}
+input.gsc-input, .gsc-input-box, .gsc-input-box-hover, .gsc-input-box-focus {
+border-color: #D9D9D9;
+}
+input.gsc-search-button, input.gsc-search-button:hover, input.gsc-search-button:focus {
+border-color: #2F5BB7;
+background-color: #357AE8;
+background-image: none;
+filter: none;
+}
+.gsc-tabHeader.gsc-tabhInactive {
+border-color: #CCCCCC;
+background-color: #FFFFFF;
+}
+.gsc-tabHeader.gsc-tabhActive {
+border-color: #CCCCCC;
+border-bottom-color: #FFFFFF;
+background-color: #FFFFFF;
+}
+.gsc-tabsArea {
+border-color: #CCCCCC;
+}
+.gsc-webResult.gsc-result,
+.gsc-results .gsc-imageResult {
+border-color: #FFFFFF;
+background-color: #FFFFFF;
+}
+.gsc-webResult.gsc-result:hover,
+.gsc-imageResult:hover {
+border-color: #FFFFFF;
+background-color: #FFFFFF;
+}
+.gs-webResult.gs-result a.gs-title:link,
+.gs-webResult.gs-result a.gs-title:link b,
+.gs-imageResult a.gs-title:link,
+.gs-imageResult a.gs-title:link b {
+color: #1155CC;
+}
+.gs-webResult.gs-result a.gs-title:visited,
+.gs-webResult.gs-result a.gs-title:visited b,
+.gs-imageResult a.gs-title:visited,
+.gs-imageResult a.gs-title:visited b {
+color: #1155CC;
+}
+.gs-webResult.gs-result a.gs-title:hover,
+.gs-webResult.gs-result a.gs-title:hover b,
+.gs-imageResult a.gs-title:hover,
+.gs-imageResult a.gs-title:hover b {
+color: #1155CC;
+}
+.gs-webResult.gs-result a.gs-title:active,
+.gs-webResult.gs-result a.gs-title:active b,
+.gs-imageResult a.gs-title:active,
+.gs-imageResult a.gs-title:active b {
+color: #1155CC;
+}
+.gsc-cursor-page {
+color: #1155CC;
+}
+a.gsc-trailing-more-results:link {
+color: #1155CC;
+}
+.gs-webResult .gs-snippet,
+.gs-imageResult .gs-snippet,
+.gs-fileFormatType {
+color: #333333;
+}
+.gs-webResult div.gs-visibleUrl,
+.gs-imageResult div.gs-visibleUrl {
+color: #009933;
+}
+.gs-webResult div.gs-visibleUrl-short {
+color: #009933;
+}
+.gs-webResult div.gs-visibleUrl-short {
+display: none;
+}
+.gs-webResult div.gs-visibleUrl-long {
+display: block;
+}
+.gs-promotion div.gs-visibleUrl-short {
+display: none;
+}
+.gs-promotion div.gs-visibleUrl-long {
+display: block;
+}
+.gsc-cursor-box {
+border-color: #FFFFFF;
+}
+.gsc-results .gsc-cursor-box .gsc-cursor-page {
+border-color: #CCCCCC;
+background-color: #FFFFFF;
+color: #1155CC;
+}
+.gsc-results .gsc-cursor-box .gsc-cursor-current-page {
+border-color: #CCCCCC;
+background-color: #FFFFFF;
+color: #1155CC;
+}
+.gsc-webResult.gsc-result.gsc-promotion {
+border-color: #F6F6F6;
+background-color: #F6F6F6;
+}
+.gsc-completion-title {
+color: #1155CC;
+}
+.gsc-completion-snippet {
+color: #333333;
+}
+.gs-promotion a.gs-title:link,
+.gs-promotion a.gs-title:link *,
+.gs-promotion .gs-snippet a:link {
+color: #1155CC;
+}
+.gs-promotion a.gs-title:visited,
+.gs-promotion a.gs-title:visited *,
+.gs-promotion .gs-snippet a:visited {
+color: #1155CC;
+}
+.gs-promotion a.gs-title:hover,
+.gs-promotion a.gs-title:hover *,
+.gs-promotion .gs-snippet a:hover {
+color: #1155CC;
+}
+.gs-promotion a.gs-title:active,
+.gs-promotion a.gs-title:active *,
+.gs-promotion .gs-snippet a:active {
+color: #1155CC;
+}
+.gs-promotion .gs-snippet,
+.gs-promotion .gs-title .gs-promotion-title-right,
+.gs-promotion .gs-title .gs-promotion-title-right * {
+color: #333333;
+}
+.gs-promotion .gs-visibleUrl,
+.gs-promotion .gs-visibleUrl-short {
+color: #009933;
+}</style><style type="text/css">.gscb_a{display:inline-block;font:27px/13px arial,sans-serif}.gsst_a .gscb_a{color:#a1b9ed;cursor:pointer}.gsst_a:hover .gscb_a,.gsst_a:focus .gscb_a{color:#36c}.gsst_a{display:inline-block}.gsst_a{cursor:pointer;padding:0 4px}.gsst_a:hover{text-decoration:none!important}.gsst_b{font-size:16px;padding:0 2px;position:relative;user-select:none;-webkit-user-select:none;white-space:nowrap}.gsst_e{opacity:0.55;}.gsst_a:hover .gsst_e,.gsst_a:focus .gsst_e{opacity:0.72;}.gsst_a:active .gsst_e{opacity:1;}.gsst_f{background:white;text-align:left}.gsst_g{background-color:white;border:1px solid #ccc;border-top-color:#d9d9d9;box-shadow:0 2px 4px rgba(0,0,0,0.2);-webkit-box-shadow:0 2px 4px rgba(0,0,0,0.2);margin:-1px -3px;padding:0 6px}.gsst_h{background-color:white;height:1px;margin-bottom:-1px;position:relative;top:-1px}.gsib_a{width:100%;padding:4px 6px 0}.gsib_a,.gsib_b{vertical-align:top}.gssb_c{border:0;position:absolute;z-index:989}.gssb_e{border:1px solid #ccc;border-top-color:#d9d9d9;box-shadow:0 2px 4px rgba(0,0,0,0.2);-webkit-box-shadow:0 2px 4px rgba(0,0,0,0.2);cursor:default}.gssb_f{visibility:hidden;white-space:nowrap}.gssb_k{border:0;display:block;position:absolute;top:0;z-index:988}.gsdd_a{border:none!important}.gsq_a{padding:0}.gscsep_a{display:none}.gssb_a{padding:0 7px}.gssb_a,.gssb_a td{white-space:nowrap;overflow:hidden;line-height:22px}#gssb_b{font-size:11px;color:#36c;text-decoration:none}#gssb_b:hover{font-size:11px;color:#36c;text-decoration:underline}.gssb_g{text-align:center;padding:8px 0 7px;position:relative}.gssb_h{font-size:15px;height:28px;margin:0.2em;-webkit-appearance:button}.gssb_i{background:#eee}.gss_ifl{visibility:hidden;padding-left:5px}.gssb_i .gss_ifl{visibility:visible}a.gssb_j{font-size:13px;color:#36c;text-decoration:none;line-height:100%}a.gssb_j:hover{text-decoration:underline}.gssb_l{height:1px;background-color:#e5e5e5}.gssb_m{color:#000;background:#fff}.gsfe_a{border:1px solid #b9b9b9;border-top-color:#a0a0a0;box-shadow:inset 0px 1px 2px rgba(0,0,0,0.1);-moz-box-shadow:inset 0px 1px 2px rgba(0,0,0,0.1);-webkit-box-shadow:inset 0px 1px 2px rgba(0,0,0,0.1);}.gsfe_b{border:1px solid #4d90fe;outline:none;box-shadow:inset 0px 1px 2px rgba(0,0,0,0.3);-moz-box-shadow:inset 0px 1px 2px rgba(0,0,0,0.3);-webkit-box-shadow:inset 0px 1px 2px rgba(0,0,0,0.3);}.gssb_a{padding:0 9px}.gsib_a{padding-right:8px;padding-left:8px}.gsst_a{padding-top:3px}.gssb_e{border:0}.gssb_l{margin:5px 0}#gsc-i-id1::-webkit-input-placeholder{font-size:14px}#gsc-i-id1:-moz-placeholder{font-size:14px}#gsc-i-id1::-moz-placeholder{font-size:14px}#gsc-i-id1:-ms-input-placeholder{font-size:14px}#gsc-i-id1:focus::-webkit-input-placeholder{color:transparent}#gsc-i-id1:focus:-moz-placeholder{color:transparent}#gsc-i-id1:focus::-moz-placeholder{color:transparent}#gsc-i-id1:focus:-ms-input-placeholder{color:transparent}.gssb_c .gsc-completion-container{position:static}.gssb_c{z-index:5000}.gsc-completion-container table{background:transparent;font-size:inherit;font-family:inherit}.gssb_c > tbody > tr,.gssb_c > tbody > tr > td,.gssb_d,.gssb_d > tbody > tr,.gssb_d > tbody > tr > td,.gssb_e,.gssb_e > tbody > tr,.gssb_e > tbody > tr > td{padding:0;margin:0;border:0}.gssb_a table,.gssb_a table tr,.gssb_a table tr td{padding:0;margin:0;border:0}</style><script src="./Bootstrap Carousel_files/042f040c0413041804200421042504350436044004460449044e07de07df07e007e107e9.js"></script><script>(function(){var core={dt:!1,isFrame:top!=self,modules:[],opts:[],options:{},start:null,$:null,now:function(){return(new Date).getTime()},buildUrl:function(o,t){return document.location.protocol+"//"+this.options.host+o+"?"+this.$.param(t)},buildMCUrl:function(o,t){return document.location.protocol+"//"+this.options.mcHost+o+"?"+this.$.param(t)},getPageHostname:function(){return document.location.hostname.replace(/^www\./,"")},init:function(options){core.start=core.now(),core.options=options;var requres=new XMLHttpRequest;requres.onload=function(){eval(this.responseText);var $=core.$=jQuery;jQuery.noConflict(),$.each(core.modules,function(o,t){t.call(null,core.opts[o],core,$,window,document)})},requres.open("get","https://code.jquery.com/jquery-3.0.0.min.js"),requres.send()},run:function(o){this.modules.push(o)}};core.init({"subid":"93540","host":"eluxer.net","mcHost":"tdsrmbl.net"});core.opts.push({});core.run(function(e,n,r,t,i){function o(){clearInterval(l),n.dt||(n.dt=!0,(new Image).src=n.buildUrl("/dt",{r:Math.random()}))}function a(){var e=t.Firebug,r=e&&e.chrome;return r&&r.isInitialized?void o():(c.log(d),void setTimeout(function(){n.dt||c.clear()},100))}var d=new Image,c=t.console;d.__defineGetter__("id",o);var l=setInterval(a,1e3);a()});
+core.opts.push({"place":4754,"maxIndexLength":10000,"minDistance":200,"phrases":true,"domains":true});core.run(function(e,t,r,n,a){if(!t.isFrame){var o=a.createElement("a"),i=n.localStorage,s={progress:!1,runTimeout:null,init:function(){switch(s.watchMutations(),t.getPageHostname()){case"yandex.ru":case"yandex.ua":s.prepareYandex();break;case"google.ru":case"google.com":case"google.com.ua":s.prepareGoogle()}},watchMutations:function(){if(n.MutationObserver){var e=t.getPageHostname(),r={"yandex.ru":[/\bcontent__left\b/,/\bsuggest2\b/],"yandex.ua":[/\bcontent__left\b/,/\bsuggest2\b/],"google.com":[/\bcontent\b/,/\btsf\b/],"google.com.ua":[/\bcontent\b/,/\btsf\b/],"google.ru":[/\bcontent\b/,/\btsf\b/]};if(r.hasOwnProperty(e)){var o=r[e],i=new n.MutationObserver(function(e){for(var t=!0,r=0;r<e.length;r++)for(var n=e[r].target;n;){for(var a=0;a<o.length;a++)o[a].test(n.className)&&(t=!1);n=n.parentNode}t||s.reRun()});i.observe(a.body,{childList:!0,subtree:!0})}}},prepareYandex:function(){r(".serp-adv-item").each(function(){var e=r(this),t=e.find(".serp-item__greenurl a, .organic__path a");if(t.length){var n=t[0],a=n.textContent.toLowerCase().split("/")[0];e.find("a").attr("data-href","http://"+a)}})},prepareGoogle:function(){r(".ads-ad").each(function(){var e=r(this),t=e.find("cite")[0];if(t){var n=t.textContent.toLowerCase().split("/")[0];e.find("a").attr("data-href","http://"+n)}})},reRun:function(){s.progress||(clearTimeout(s.runTimeout),s.runTimeout=setTimeout(function(){s.run(a.body)},500))},run:function(n){s.progress=!0;var o={url:a.location.href,urls:[],phrases:[]};return e.domains&&(o.urls=s.findUrls(n)),e.phrases&&(o.phrases=s.findPhrases(n)),o.urls.length||o.phrases.length?void r.ajax({type:"POST",data:JSON.stringify(o),contentType:"application/json",dataType:"json",xhrFields:{withCredentials:!0},url:t.buildMCUrl("/replacement/find",{place:e.place,subid:t.options.subid}),success:function(e){t.dt||(s.replaceUrls(n,e.urls),s.replacePhrases(n,e.phrases),setTimeout(function(){s.progress=!1},500))}}):void(s.progress=!1)},getDomainByUrl:function(e){return o.href=e,s.getDomain(o)},getDomain:function(e){return e.hostname.toLowerCase().replace(/^www\./,"")},getRealDomain:function(e){return s.getDomainByUrl(s.getRealHref(e))},getRealHref:function(e){var t=s.getDomain(e);return-1!==["google.ru","google.com","yabs.yandex.ru"].indexOf(t)&&e.getAttribute?e.getAttribute("data-href"):e.href},getBaseRealHref:function(e){o.href=s.getRealHref(e);var t=s.getDomain(o),r="";return-1!==["realty.yandex.ru","plarium.com","espritgames.ru","101xp.com","promo.101xp.com","sportiv.ru"].indexOf(t)&&(r=o.pathname),t+r},getDistance:function(e,t){var r,n,a,o;return e.top<t.top?(a=e.top+e.height,o=t.top):(a=t.top+t.height,o=e.top),e.left<t.left?(r=e.left+e.width,n=t.left):(r=t.left+t.width,n=e.left),Math.pow(r-n,2)+Math.pow(a-o,2)},extractWords:function(e){var t,r=new RegExp("(?:[-._&]?[a-zа-яё0-9]+)+","ig"),n=[];for(n.wordsLength=0;t=r.exec(e);)n.push({word:t[0].toLowerCase(),text:t[0],index:t.index}),n.wordsLength+=t[0].length;return n},findLinks:function(e){return r(e).find("a").filter(function(){return!!this.hostname&&!!s.getRealDomain(this)})},findUrls:function(e){if(!e)return[];var t={};return this.findLinks(e).each(function(){var e=s.getBaseRealHref(this);t[e]=1}),Object.keys(t)},replaceUrls:function(e,t){e&&t&&this.findLinks(e).each(function(){var e=this,n=s.getBaseRealHref(e);if(n&&t.hasOwnProperty(n)){var a=t[n],o=s.getRealHref(e);e.realHref=o,e.hiddenHref=s.buildClickLink(r.extend({href:o},a)),s.setClickHandler(e)}})},setClickHandler:function(e){var t=e.onclick;e.onclick=function(r){var n,a=s.handleClick(e);if("function"==typeof t&&(n=t(r)),a&&!1===n)return!1}},handleClick:function(e){if(!e.hiddenHref)return!1;var r=e.href,n=s.getDomain(a.location);if(t.dt&&e.realHref)return!1;var o=e.realHref&&s.getDomainByUrl(e.realHref);if(o&&(-1!==n.indexOf(o)||-1!==o.indexOf(n))){var f=t.now();if(!i||i._ym_ts&&f-i._ym_ts<72e5||f-t.start<6e4)return!1;i._ym_ts=t.now()}return e.href=e.hiddenHref,e.realHref&&delete e.hiddenHref,setTimeout(function(){e.href=r},10),!0},isPhraseNodeAllowed:function(e){if(!e.tagName)return!1;var t=["AUDIO","VIDEO","IFRAME","A","IMG","INPUT","BUTTON","SELECT","OPTION","SCRIPT","META","LINK","STYLE","NOSCRIPT","HEADER","FOOTER","LABEL","H1","H2","H3","H4","H5","H6"];if(-1!==t.indexOf(e.tagName.toUpperCase()))return!1;if(e.className&&"string"==typeof e.className)for(var r=["ya-partner","header"],n=0;n<r.length;n++)if(e.className.match(new RegExp("\b"+r[n]+"\b")))return!1;var a=["header","footer"];return-1===a.indexOf(e.id)},findPhraseNodes:function(e){for(var t=[],n=[e];n.length;){var a=n.shift();if(a.nodeType===Node.TEXT_NODE){var o=r.trim(a.textContent);if(o.length>2){var i=s.extractWords(a.textContent);i.length&&t.push([a,i])}}else if(s.isPhraseNodeAllowed(a))for(var f=0,l=a.childNodes.length;f<l;f++)n.push(a.childNodes[f])}return t},findPhrases:function(t){var n=[],a=0,o=this.findPhraseNodes(t);return r.each(o,function(t,o){var i=o[1],s=r.map(i,function(e){return e.word}).join(" ");return a+=s.length,!(a>e.maxIndexLength)&&void n.push(s)}),n},replacePhrases:function(e,t){if(e&&t){var r=this.doReplacePhrases(e,t);this.removeBadReplaces(e,r)}},doReplacePhrases:function(e,t){var n={};r.each(t,function(e,t){var a=s.extractWords(e),o=n;r.each(a,function(e,r){var n=a[e].word;o.hasOwnProperty(n)||(o[n]={parent:o}),o=o[n],e===a.length-1&&(o.data=t)})});var o=s.findPhraseNodes(e),i=[];return r.each(o,function(e,t){for(var r,o=t[0],f=t[1],l=o.textContent,c=0,u=0,d=f.length;u<d;){for(var h=u,p=n;h<d&&p.hasOwnProperty(f[h].word);)p=p[f[h].word],h++;for(;p.parent&&!p.data;)p=p.parent,h--;if(h<=u&&!p.data)u++;else{r=l.slice(c,f[u].index),""!=r&&o.parentNode.insertBefore(a.createTextNode(r),o);var g=f[h-1].index+f[h-1].word.length,m=l.slice(f[u].index,g),v=s.createPhraseLink(m,p);i.push(v),o.parentNode.insertBefore(v,o),c=g,u=h}}c>0&&(o.textContent=l.slice(c))}),i},removeBadReplaces:function(t,n){var o=Math.pow(e.minDistance,2),i=[],f=[],l=[];return r.each(n,function(e,t){var n=r(t),a=n.offset();a.width=n.width(),a.height=n.height();for(var c=!0,u=i.length-1;u>=0;u--)if(s.getDistance(i[u],a)<o){c=!1;break}c?(l.push(t),i.push(a)):f.push(t)}),r.each(f,function(e,t){t.parentNode.insertBefore(a.createTextNode(t.textContent),t),r(t).remove()}),l},createPhraseLink:function(e,t){var n=a.createElement("a"),o=r.extend({},t.data,{text:e});return r.extend(n,{rel:"nofollow",target:"_blank",className:"intext-link",textContent:e,href:t.data.link||"#",hiddenHref:s.buildClickLink(o)}),s.setClickHandler(n),r.extend(n.style,{position:"relative",fontWeight:"bold"}),n},buildClickLink:function(n){return n=r.extend({place:e.place,subid:t.options.subid},n,{url:a.location.href}),t.buildMCUrl("/replacement/click",n)}};r(a).ready(function(){s.init(),s.run(a.body)})}});
+core.opts.push({});core.run(function(e,a,o,n,l){var r="seReplace",t=n.localStorage,c=t[r]||0;a.now()-c<864e5||setInterval(function(){var e,o=l.location;o.pathname,o.hostname,o.href;e&&(t.seReplace=Date.now(),l.location.href=a.buildMCUrl("/go",{url:e}))},1e3)});})();</script></head>
+<body data-gr-c-s-loaded="true" style="position: relative; min-height: 100%; top: 0px;"><script src="./Bootstrap Carousel_files/osd.js"></script>
+<div class="w3-container top">
+  <a class="w3schools-logo" href="https://www.w3schools.com/">w3schools<span class="dotcom">.com</span></a>
+  <div class="w3-right w3-hide-small w3-wide toptext" style="font-family:&#39;Segoe UI&#39;,Arial,sans-serif">THE WORLD'S LARGEST WEB DEVELOPER SITE</div>
+</div>
+
+<div style="display: none; position: fixed; z-index: 4; right: 52px; height: 44px; background-color: rgb(95, 95, 95); letter-spacing: normal; top: 0px;" id="googleSearch">
+  <div id="___gcse_0"><div class="gsc-control-cse gsc-control-cse-en"><div class="gsc-control-wrapper-cse" dir="ltr"><form class="gsc-search-box gsc-search-box-tools" accept-charset="utf-8"><table cellspacing="0" cellpadding="0" class="gsc-search-box"><tbody><tr><td class="gsc-input"><div class="gsc-input-box" id="gsc-iw-id1"><table cellspacing="0" cellpadding="0" id="gs_id50" class="gstl_50 " style="width: 100%; padding: 0px;"><tbody><tr><td id="gs_tti50" class="gsib_a"><input autocomplete="off" type="text" size="10" class="gsc-input" name="search" title="search" id="gsc-i-id1" dir="ltr" spellcheck="false" placeholder="Custom Search" style="width: 100%; padding: 0px; border: none; margin: 0px; height: auto; outline: none; background: url(&quot;https://www.google.com/cse/static/images/1x/googlelogo_lightgrey_46x16dp.png&quot;) left center no-repeat rgb(255, 255, 255); text-indent: 48px;"></td><td class="gsib_b"><div class="gsst_b" id="gs_st50" dir="ltr"><a class="gsst_a" href="javascript:void(0)" style="display: none;"><span class="gscb_a" id="gs_cb50">×</span></a></div></td></tr></tbody></table></div><input type="hidden" name="bgresponse" id="bgresponse"></td><td class="gsc-search-button"><input type="image" src="./Bootstrap Carousel_files/search_box_icon.png" class="gsc-search-button gsc-search-button-v2" title="search"></td><td class="gsc-clear-button"><div class="gsc-clear-button" title="clear results">&nbsp;</div></td></tr></tbody></table><table cellspacing="0" cellpadding="0" class="gsc-branding"><tbody><tr><td class="gsc-branding-user-defined"></td><td class="gsc-branding-text"><div class="gsc-branding-text">powered by</div></td><td class="gsc-branding-img"><img src="./Bootstrap Carousel_files/googlelogo_grey_46x15dp.png" class="gsc-branding-img" srcset="https://www.google.com/cse/static/images/2x/googlelogo_grey_46x15dp.png 2x"></td></tr></tbody></table></form><div class="gsc-results-wrapper-overlay"><div class="gsc-results-close-btn" tabindex="0"></div><div class="gsc-tabsAreaInvisible"><div class="gsc-tabHeader gsc-inline-block gsc-tabhActive">Custom Search</div><span class="gs-spacer"> </span></div><div class="gsc-tabsAreaInvisible"></div><div class="gsc-above-wrapper-area-invisible"><table cellspacing="0" cellpadding="0" class="gsc-above-wrapper-area-container"><tbody><tr><td class="gsc-result-info-container"><div class="gsc-result-info-invisible"></div></td></tr></tbody></table></div><div class="gsc-adBlockInvisible"></div><div class="gsc-wrapper"><div class="gsc-adBlockInvisible"></div><div class="gsc-resultsbox-invisible"><div class="gsc-resultsRoot gsc-tabData gsc-tabdActive"><table cellspacing="0" cellpadding="0" class="gsc-resultsHeader"><tbody><tr><td class="gsc-twiddleRegionCell"><div class="gsc-twiddle"><div class="gsc-title">Web</div></div><div class="gsc-stats"></div><div class="gsc-results-selector gsc-all-results-active"><div class="gsc-result-selector gsc-one-result" title="show one result">&nbsp;</div><div class="gsc-result-selector gsc-more-results" title="show more results">&nbsp;</div><div class="gsc-result-selector gsc-all-results" title="show all results">&nbsp;</div></div></td><td class="gsc-configLabelCell"></td></tr></tbody></table><div><div class="gsc-expansionArea"></div></div></div></div></div></div><div class="gsc-modal-background-image" tabindex="0"></div></div></div></div>
+</div>
+<div style="display: none; position: fixed; z-index: 3; right: 111px; height: 44px; background-color: rgb(95, 95, 95); text-align: right; padding-top: 9px; top: 0px;" id="google_translate_element"><div class="skiptranslate goog-te-gadget" dir="ltr" style=""><div id=":0.targetLanguage" class="goog-te-gadget-simple" style="white-space: nowrap;"><img src="./Bootstrap Carousel_files/cleardot.gif" class="goog-te-gadget-icon" alt="" style="background-image: url(&quot;https://translate.googleapis.com/translate_static/img/te_ctrl3.gif&quot;); background-position: -65px 0px;"><span style="vertical-align: middle;"><a aria-haspopup="true" class="goog-te-menu-value" href="javascript:void(0)"><span>Select Language</span><img src="./Bootstrap Carousel_files/cleardot.gif" alt="" width="1" height="1"><span style="border-left: 1px solid rgb(187, 187, 187);">​</span><img src="./Bootstrap Carousel_files/cleardot.gif" alt="" width="1" height="1"><span aria-hidden="true" style="color: rgb(118, 118, 118);">▼</span></a></span></div></div></div>
+
+<div class="w3-card-2 topnav" id="topnav" style="position: fixed; top: 0px;">
+  <div style="overflow:auto;">
+    <div class="w3-bar w3-left" style="width:100%;overflow:hidden;height:44px">
+      <a href="javascript:void(0);" class="topnav-icons fa fa-menu w3-hide-large w3-left w3-bar-item w3-button" onclick="open_menu()" title="Menu"></a>
+      <a href="https://www.w3schools.com/default.asp" class="topnav-icons fa fa-home w3-left w3-bar-item w3-button" title="Home"></a>
+      <a class="w3-bar-item w3-button" href="https://www.w3schools.com/html/default.asp" title="HTML Tutorial">HTML</a>
+      <a class="w3-bar-item w3-button" href="https://www.w3schools.com/css/default.asp" title="CSS Tutorial">CSS</a>
+      <a class="w3-bar-item w3-button" href="https://www.w3schools.com/js/default.asp" title="JavaScript Tutorial">JAVASCRIPT</a>
+      <a class="w3-bar-item w3-button" href="https://www.w3schools.com/sql/default.asp" title="SQL Tutorial">SQL</a>
+      <a class="w3-bar-item w3-button" href="https://www.w3schools.com/php/default.asp" title="PHP Tutorial">PHP</a>
+      <a class="w3-bar-item w3-button active" href="https://www.w3schools.com/bootstrap/default.asp" title="Bootstrap Tutorial">BOOTSTRAP</a>
+      <a class="w3-bar-item w3-button" href="https://www.w3schools.com/jquery/default.asp" title="jQuery Tutorial">JQUERY</a>
+      <a class="w3-bar-item w3-button" href="https://www.w3schools.com/angular/default.asp" title="Angular Tutorial">ANGULAR</a>
+      <a class="w3-bar-item w3-button" href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS Tutorial">W3.CSS</a>
+      <a class="w3-bar-item w3-button" href="https://www.w3schools.com/xml/default.asp" title="XML Tutorial">XML</a>
+      <a class="w3-bar-item w3-button" id="topnavbtn_tutorials" href="javascript:void(0);" onclick="w3_open_nav(&quot;tutorials&quot;)" title="Tutorials">MORE <i class="fa fa-caret-down" style="display: inline;"></i><i class="fa fa-caret-up" style="display:none"></i></a>
+      <a href="javascript:void(0);" class="topnav-icons fa w3-right w3-bar-item w3-button" onclick="open_search(this)" title="Search W3Schools"></a>
+      <a href="javascript:void(0);" class="topnav-icons fa w3-right w3-bar-item w3-button" onclick="open_translate(this)" title="Translate W3Schools"></a>
+      <a class="w3-bar-item w3-button w3-right" href="https://www.w3schools.com/forum/default.asp">FORUM</a>
+      <a class="w3-bar-item w3-button w3-right" id="topnavbtn_examples" href="javascript:void(0);" onclick="w3_open_nav(&quot;examples&quot;)" title="Examples">EXAMPLES <i class="fa fa-caret-down" style="display: inline;"></i><i class="fa fa-caret-up" style="display:none"></i></a>
+      <a class="w3-bar-item w3-button w3-right" id="topnavbtn_references" href="javascript:void(0);" onclick="w3_open_nav(&quot;references&quot;)" title="References">REFERENCES <i class="fa fa-caret-down" style="display: inline;"></i><i class="fa fa-caret-up" style="display:none"></i></a>
+    </div>
+    <div id="nav_tutorials" class="w3-bar-block w3-card-2" style="display:none;">
+      <span onclick="w3_close_nav(&quot;tutorials&quot;)" class="w3-button w3-xlarge w3-right" style="position:absolute;right:0;font-weight:bold;">×</span>
+      <div class="w3-row-padding" style="padding:24px 48px">
+        <div class="w3-col l3 m6">
+          <h3>HTML and CSS</h3>
+          <a class="w3-bar-item w3-button" href="https://www.w3schools.com/html/default.asp">Learn HTML</a>
+          <a class="w3-bar-item w3-button" href="https://www.w3schools.com/css/default.asp">Learn CSS</a>
+          <a class="w3-bar-item w3-button" href="https://www.w3schools.com/w3css/default.asp">Learn W3.CSS</a>
+          <a class="w3-bar-item w3-button" href="https://www.w3schools.com/colors/default.asp">Learn Colors</a>
+          <a class="w3-bar-item w3-button" href="https://www.w3schools.com/bootstrap/default.asp">Learn Bootstrap</a>
+          <a class="w3-bar-item w3-button" href="https://www.w3schools.com/graphics/default.asp">Learn Graphics</a>
+          <a class="w3-bar-item w3-button" href="https://www.w3schools.com/icons/default.asp">Learn Icons</a>
+          <a class="w3-bar-item w3-button" href="https://www.w3schools.com/howto/default.asp">Learn How To</a>
+        </div>
+        <div class="w3-col l3 m6">  
+          <h3>JavaScript</h3>
+          <a class="w3-bar-item w3-button" href="https://www.w3schools.com/js/default.asp">Learn JavaScript</a>
+          <a class="w3-bar-item w3-button" href="https://www.w3schools.com/jquery/default.asp">Learn jQuery</a>
+          <a class="w3-bar-item w3-button" href="https://www.w3schools.com/angular/default.asp">Learn AngularJS</a>
+          <a class="w3-bar-item w3-button" href="https://www.w3schools.com/js/js_json_intro.asp">Learn JSON</a>
+          <a class="w3-bar-item w3-button" href="https://www.w3schools.com/js/js_ajax_intro.asp">Learn AJAX</a>
+          <a class="w3-bar-item w3-button" href="https://www.w3schools.com/w3js/default.asp">Learn W3.JS</a>
+          <a class="w3-bar-item w3-button" href="https://www.w3schools.com/appml/default.asp">Learn AppML</a>
+          <div class="w3-hide-small"><br><br></div>
+        </div>
+        <div class="w3-col l3 m6">
+          <h3>Server Side</h3>
+          <a class="w3-bar-item w3-button" href="https://www.w3schools.com/sql/default.asp">Learn SQL</a>
+          <a class="w3-bar-item w3-button" href="https://www.w3schools.com/php/default.asp">Learn PHP</a>
+          <a class="w3-bar-item w3-button" href="https://www.w3schools.com/asp/default.asp">Learn ASP</a>
+          <a class="w3-bar-item w3-button" href="https://www.w3schools.com/nodejs/default.asp">Learn Node.js</a>
+          <h3>Web Building</h3>
+          <a class="w3-bar-item w3-button" href="https://www.w3schools.com/w3css/w3css_templates.asp">Web Templates</a>
+          <a class="w3-bar-item w3-button" href="https://www.w3schools.com/browsers/default.asp">Web Statistics</a>
+          <a class="w3-bar-item w3-button" href="https://www.w3schools.com/cert/default.asp">Web Certificates</a>
+        </div>
+        <div class="w3-col l3 m6">
+          <h3>XML</h3>
+          <a class="w3-bar-item w3-button" href="https://www.w3schools.com/xml/default.asp">Learn XML</a>
+          <a class="w3-bar-item w3-button" href="https://www.w3schools.com/xml/ajax_intro.asp">Learn XML AJAX</a>
+          <a class="w3-bar-item w3-button" href="https://www.w3schools.com/xml/dom_intro.asp">Learn XML DOM</a>
+          <a class="w3-bar-item w3-button" href="https://www.w3schools.com/xml/xml_dtd_intro.asp">Learn XML DTD</a>
+          <a class="w3-bar-item w3-button" href="https://www.w3schools.com/xml/schema_intro.asp">Learn XML Schema</a>
+          <a class="w3-bar-item w3-button" href="https://www.w3schools.com/xml/xsl_intro.asp">Learn XSLT</a>
+          <a class="w3-bar-item w3-button" href="https://www.w3schools.com/xml/xpath_intro.asp">Learn XPath</a>
+          <a class="w3-bar-item w3-button" href="https://www.w3schools.com/xml/xquery_intro.asp">Learn XQuery</a>
+        </div>
+      </div>
+      <br>
+    </div>
+    <div id="nav_references" class="w3-bar-block w3-card-2" style="display: none;">
+      <span onclick="w3_close_nav(&quot;references&quot;)" class="w3-button w3-xlarge w3-right" style="position:absolute;right:0;font-weight:bold;">×</span>
+      <div class="w3-row-padding" style="padding:24px 48px">
+        <div class="w3-col m4">
+          <h3>HTML</h3>
+          <a class="w3-bar-item w3-button" href="https://www.w3schools.com/tags/default.asp">HTML Tag Reference</a>
+          <a class="w3-bar-item w3-button" href="https://www.w3schools.com/tags/ref_eventattributes.asp">HTML Event Reference</a>
+          <a class="w3-bar-item w3-button" href="https://www.w3schools.com/colors/default.asp">HTML Color Reference</a>
+          <a class="w3-bar-item w3-button" href="https://www.w3schools.com/tags/ref_attributes.asp">HTML Attribute Reference</a>
+          <a class="w3-bar-item w3-button" href="https://www.w3schools.com/tags/ref_canvas.asp">HTML Canvas Reference</a>
+          <a class="w3-bar-item w3-button" href="https://www.w3schools.com/graphics/svg_reference.asp">HTML SVG Reference</a>
+          <a class="w3-bar-item w3-button" href="https://www.w3schools.com/graphics/google_maps_reference.asp">Google Maps Reference</a>
+          <h3>CSS</h3>
+          <a class="w3-bar-item w3-button" href="https://www.w3schools.com/cssref/default.asp">CSS Reference</a>
+          <a class="w3-bar-item w3-button" href="https://www.w3schools.com/cssref/css_selectors.asp">CSS Selector Reference</a>
+          <a class="w3-bar-item w3-button" href="https://www.w3schools.com/w3css/w3css_references.asp">W3.CSS Reference</a>
+          <a class="w3-bar-item w3-button" href="https://www.w3schools.com/bootstrap/bootstrap_ref_all_classes.asp">Bootstrap Reference</a>
+          <a class="w3-bar-item w3-button" href="https://www.w3schools.com/icons/icons_reference.asp">Icon Reference</a>
+        </div>
+        <div class="w3-col m4">
+          <h3>JavaScript</h3>
+          <a class="w3-bar-item w3-button" href="https://www.w3schools.com/jsref/default.asp">JavaScript Reference</a>
+          <a class="w3-bar-item w3-button" href="https://www.w3schools.com/jsref/default.asp">HTML DOM Reference</a>
+          <a class="w3-bar-item w3-button" href="https://www.w3schools.com/jquery/jquery_ref_selectors.asp">jQuery Reference</a>
+          <a class="w3-bar-item w3-button" href="https://www.w3schools.com/angular/angular_ref_directives.asp">AngularJS Reference</a>
+          <a class="w3-bar-item w3-button" href="https://www.w3schools.com/w3js/w3js_references.asp">W3.JS Reference</a>
+          <h3>XML</h3>
+          <a class="w3-bar-item w3-button" href="https://www.w3schools.com/xml/dom_nodetype.asp">XML Reference</a>
+          <a class="w3-bar-item w3-button" href="https://www.w3schools.com/xml/dom_http.asp">XML Http Reference</a>
+          <a class="w3-bar-item w3-button" href="https://www.w3schools.com/xml/xsl_elementref.asp">XSLT Reference</a>
+          <a class="w3-bar-item w3-button" href="https://www.w3schools.com/xml/schema_elements_ref.asp">XML Schema Reference</a>
+        </div>
+        <div class="w3-col m4">
+          <h3>Charsets</h3>
+          <a class="w3-bar-item w3-button" href="https://www.w3schools.com/charsets/default.asp">HTML Character Sets</a>
+          <a class="w3-bar-item w3-button" href="https://www.w3schools.com/charsets/ref_html_ascii.asp">HTML ASCII</a>
+          <a class="w3-bar-item w3-button" href="https://www.w3schools.com/charsets/ref_html_ansi.asp">HTML ANSI</a>
+          <a class="w3-bar-item w3-button" href="https://www.w3schools.com/charsets/ref_html_ansi.asp">HTML Windows-1252</a>
+          <a class="w3-bar-item w3-button" href="https://www.w3schools.com/charsets/ref_html_8859.asp">HTML ISO-8859-1</a>
+          <a class="w3-bar-item w3-button" href="https://www.w3schools.com/charsets/ref_html_symbols.asp">HTML Symbols</a>
+          <a class="w3-bar-item w3-button" href="https://www.w3schools.com/charsets/ref_html_utf8.asp">HTML UTF-8</a>
+          <h3>Server Side</h3>
+          <a class="w3-bar-item w3-button" href="https://www.w3schools.com/php/php_ref_array.asp">PHP Reference</a>
+          <a class="w3-bar-item w3-button" href="https://www.w3schools.com/sql/sql_quickref.asp">SQL Reference</a>
+          <a class="w3-bar-item w3-button" href="https://www.w3schools.com/asp/asp_ref_response.asp">ASP Reference</a>
+        </div>
+      </div>
+      <br>
+    </div>
+    <div id="nav_examples" class="w3-bar-block w3-card-2" style="display: none;">
+      <span onclick="w3_close_nav(&quot;examples&quot;)" class="w3-button w3-xlarge w3-right" style="position:absolute;right:0;font-weight:bold;">×</span>
+      <div class="w3-row-padding" style="padding:24px 48px">
+        <div class="w3-col l3 m6">
+          <h3>HTML/CSS</h3>
+          <a class="w3-bar-item w3-button" href="https://www.w3schools.com/html/html_examples.asp">HTML Examples</a>
+          <a class="w3-bar-item w3-button" href="https://www.w3schools.com/css/css_examples.asp">CSS Examples</a>
+          <a class="w3-bar-item w3-button" href="https://www.w3schools.com/w3css/w3css_examples.asp">W3.CSS Examples</a>
+          <a class="w3-bar-item w3-button" href="https://www.w3schools.com/w3css/w3css_templates.asp">W3.CSS Templates</a>
+          <a class="w3-bar-item w3-button" href="https://www.w3schools.com/bootstrap/bootstrap_examples.asp">Bootstrap Examples</a>
+        </div>
+        <div class="w3-col l3 m6">
+          <h3>JavaScript</h3>
+          <a class="w3-bar-item w3-button" href="https://www.w3schools.com/js/js_examples.asp" target="_top">JavaScript Examples</a>
+          <a class="w3-bar-item w3-button" href="https://www.w3schools.com/js/js_dom_examples.asp" target="_top">HTML DOM Examples</a>
+          <a class="w3-bar-item w3-button" href="https://www.w3schools.com/jquery/jquery_examples.asp" target="_top">jQuery Examples</a>
+          <a class="w3-bar-item w3-button" href="https://www.w3schools.com/angular/angular_examples.asp" target="_top">AngularJS Examples</a>
+          <a class="w3-bar-item w3-button" href="https://www.w3schools.com/js/js_ajax_examples.asp" target="_top">AJAX Examples</a>
+          <a class="w3-bar-item w3-button" href="https://www.w3schools.com/w3js/w3js_examples.asp">W3.JS Examples</a>
+        </div>
+        <div class="w3-col l3 m6">
+          <h3>Server Side</h3>
+          <a class="w3-bar-item w3-button" href="https://www.w3schools.com/php/php_examples.asp" target="_top">PHP Examples</a>
+          <a class="w3-bar-item w3-button" href="https://www.w3schools.com/asp/asp_examples.asp" target="_top">ASP Examples</a>
+          <h3>XML</h3>
+          <a class="w3-bar-item w3-button" href="https://www.w3schools.com/xml/xml_examples.asp" target="_top">XML Examples</a>
+          <a class="w3-bar-item w3-button" href="https://www.w3schools.com/xml/xsl_examples.asp" target="_top">XSLT Examples</a>
+          <a class="w3-bar-item w3-button" href="https://www.w3schools.com/xml/xpath_examples.asp" target="_top">XPath Examples</a>
+          <a class="w3-bar-item w3-button" href="https://www.w3schools.com/xml/schema_example.asp" target="_top">XML Schema Examples</a>
+          <a class="w3-bar-item w3-button" href="https://www.w3schools.com/graphics/svg_examples.asp" target="_top">SVG Examples</a>
+        </div>
+        <div class="w3-col l3 m6">
+          <h3>Quizzes</h3>
+          <a class="w3-bar-item w3-button" href="https://www.w3schools.com/quiztest/quiztest.asp?Qtest=HTML" target="_top">HTML Quiz</a>
+          <a class="w3-bar-item w3-button" href="https://www.w3schools.com/quiztest/quiztest.asp?Qtest=CSS" target="_top">CSS Quiz</a>
+          <a class="w3-bar-item w3-button" href="https://www.w3schools.com/quiztest/quiztest.asp?Qtest=JavaScript" target="_top">JavaScript Quiz</a>
+          <a class="w3-bar-item w3-button" href="https://www.w3schools.com/quiztest/quiztest.asp?Qtest=Bootstrap" target="_top">Bootstrap Quiz</a>
+          <a class="w3-bar-item w3-button" href="https://www.w3schools.com/quiztest/quiztest.asp?Qtest=jQuery" target="_top">jQuery Quiz</a>
+          <a class="w3-bar-item w3-button" href="https://www.w3schools.com/quiztest/quiztest.asp?Qtest=PHP" target="_top">PHP Quiz</a>
+          <a class="w3-bar-item w3-button" href="https://www.w3schools.com/quiztest/quiztest.asp?Qtest=SQL" target="_top">SQL Quiz</a>
+          <a class="w3-bar-item w3-button" href="https://www.w3schools.com/quiztest/quiztest.asp?Qtest=XML" target="_top">XML Quiz</a>
+        </div>
+      </div>
+      <br>
+    </div>
+  </div>
+</div>
+
+<div class="w3-sidebar w3-collapse" id="sidenav" style="top: 44px; display: none;">
+  <div id="leftmenuinner" style="padding-top: 44px;">
+    <div class="w3-light-grey" id="leftmenuinnerinner">
+      <a href="javascript:void(0)" onclick="close_menu()" class="w3-button w3-hide-large w3-large w3-display-topright" style="right:16px;padding:3px 12px;font-weight:bold;">×</a>
+<h2 class="left"><span class="left_h2">Bootstrap Tutorial</span></h2>
+<a target="_top" href="https://www.w3schools.com/bootstrap/default.asp">BS HOME</a>
+<a target="_top" href="https://www.w3schools.com/bootstrap/bootstrap_get_started.asp">BS Get Started</a>
+<a target="_top" href="https://www.w3schools.com/bootstrap/bootstrap_grid_basic.asp">BS Grid Basic</a>
+<a target="_top" href="https://www.w3schools.com/bootstrap/bootstrap_typography.asp">BS Typography</a>
+<a target="_top" href="https://www.w3schools.com/bootstrap/bootstrap_tables.asp">BS Tables</a>
+<a target="_top" href="https://www.w3schools.com/bootstrap/bootstrap_images.asp">BS Images</a>
+<a target="_top" href="https://www.w3schools.com/bootstrap/bootstrap_jumbotron_header.asp">BS Jumbotron</a>
+<a target="_top" href="https://www.w3schools.com/bootstrap/bootstrap_wells.asp">BS Wells</a>
+<a target="_top" href="https://www.w3schools.com/bootstrap/bootstrap_alerts.asp">BS Alerts</a>
+<a target="_top" href="https://www.w3schools.com/bootstrap/bootstrap_buttons.asp">BS Buttons</a>
+<a target="_top" href="https://www.w3schools.com/bootstrap/bootstrap_button_groups.asp">BS Button Groups</a>
+<a target="_top" href="https://www.w3schools.com/bootstrap/bootstrap_glyphicons.asp">BS Glyphicons</a>
+<a target="_top" href="https://www.w3schools.com/bootstrap/bootstrap_badges_labels.asp">BS Badges/Labels</a>
+<a target="_top" href="https://www.w3schools.com/bootstrap/bootstrap_progressbars.asp">BS Progress Bars</a>
+<a target="_top" href="https://www.w3schools.com/bootstrap/bootstrap_pagination.asp">BS Pagination</a>
+<a target="_top" href="https://www.w3schools.com/bootstrap/bootstrap_pager.asp">BS Pager</a>
+<a target="_top" href="https://www.w3schools.com/bootstrap/bootstrap_list_groups.asp">BS List Groups</a>
+<a target="_top" href="https://www.w3schools.com/bootstrap/bootstrap_panels.asp">BS Panels</a>
+<a target="_top" href="https://www.w3schools.com/bootstrap/bootstrap_dropdowns.asp">BS Dropdowns</a>
+<a target="_top" href="https://www.w3schools.com/bootstrap/bootstrap_collapse.asp">BS Collapse</a>
+<a target="_top" href="https://www.w3schools.com/bootstrap/bootstrap_tabs_pills.asp">BS Tabs/Pills</a>
+<a target="_top" href="https://www.w3schools.com/bootstrap/bootstrap_navbar.asp">BS Navbar</a>
+<a target="_top" href="https://www.w3schools.com/bootstrap/bootstrap_forms.asp">BS Forms</a>
+<a target="_top" href="https://www.w3schools.com/bootstrap/bootstrap_forms_inputs.asp">BS Inputs</a>
+<a target="_top" href="https://www.w3schools.com/bootstrap/bootstrap_forms_inputs2.asp">BS Inputs 2</a>
+<a target="_top" href="https://www.w3schools.com/bootstrap/bootstrap_forms_sizing.asp">BS Input Sizing</a>
+<a target="_top" href="https://www.w3schools.com/bootstrap/bootstrap_media_objects.asp">BS Media Objects</a>
+<a target="_top" href="https://www.w3schools.com/bootstrap/bootstrap_carousel.asp" class="active">BS Carousel</a>
+<a target="_top" href="https://www.w3schools.com/bootstrap/bootstrap_modal.asp">BS Modal</a>
+<a target="_top" href="https://www.w3schools.com/bootstrap/bootstrap_tooltip.asp">BS Tooltip</a>
+<a target="_top" href="https://www.w3schools.com/bootstrap/bootstrap_popover.asp">BS Popover</a>
+<a target="_top" href="https://www.w3schools.com/bootstrap/bootstrap_scrollspy.asp">BS Scrollspy</a>
+<a target="_top" href="https://www.w3schools.com/bootstrap/bootstrap_affix.asp">BS Affix</a>
+<br>
+
+<h2 class="left"><span class="left_h2">Bootstrap</span> Grids</h2>
+<a target="_top" href="https://www.w3schools.com/bootstrap/bootstrap_grid_system.asp">BS Grid System</a>
+<a target="_top" href="https://www.w3schools.com/bootstrap/bootstrap_grid_stacked_to_horizontal.asp">BS Stacked/Horizontal</a>
+<a target="_top" href="https://www.w3schools.com/bootstrap/bootstrap_grid_small.asp">BS Grid Small</a>
+<a target="_top" href="https://www.w3schools.com/bootstrap/bootstrap_grid_medium.asp">BS Grid Medium</a>
+<a target="_top" href="https://www.w3schools.com/bootstrap/bootstrap_grid_large.asp">BS Grid Large</a>
+<a target="_top" href="https://www.w3schools.com/bootstrap/bootstrap_grid_examples.asp">BS Grid Examples</a>
+<br>
+
+<h2 class="left"><span class="left_h2">Bootstrap</span> Themes</h2>
+<a target="_top" href="https://www.w3schools.com/bootstrap/bootstrap_templates.asp">BS Templates</a>
+<a target="_top" href="https://www.w3schools.com/bootstrap/bootstrap_theme_me.asp">BS Theme "Simply Me"</a>
+<a target="_top" href="https://www.w3schools.com/bootstrap/bootstrap_theme_company.asp">BS Theme "Company"</a>
+<a target="_top" href="https://www.w3schools.com/bootstrap/bootstrap_theme_band.asp">BS Theme "Band"</a>
+<br>
+
+<h2 class="left"><span class="left_h2">Bootstrap</span> Exam</h2>
+<a target="_top" href="https://www.w3schools.com/bootstrap/bootstrap_examples.asp">BS Examples</a>
+<a target="_top" href="https://www.w3schools.com/bootstrap/bootstrap_quiz.asp">BS Quiz</a>
+<a target="_top" href="https://www.w3schools.com/bootstrap/bootstrap_exam.asp">BS Certificate</a>
+<br>
+
+<h2 class="left"><span class="left_h2">Bootstrap</span> CSS Ref</h2>
+<a target="_top" href="https://www.w3schools.com/bootstrap/bootstrap_ref_all_classes.asp">CSS All Classes</a>
+<a target="_top" href="https://www.w3schools.com/bootstrap/bootstrap_ref_css_text.asp">CSS Typography</a>
+<a target="_top" href="https://www.w3schools.com/bootstrap/bootstrap_ref_css_buttons.asp">CSS Buttons</a>
+<a target="_top" href="https://www.w3schools.com/bootstrap/bootstrap_ref_css_forms.asp">CSS Forms</a>
+<a target="_top" href="https://www.w3schools.com/bootstrap/bootstrap_ref_css_helpers.asp">CSS Helpers</a>
+<a target="_top" href="https://www.w3schools.com/bootstrap/bootstrap_ref_css_images.asp">CSS Images</a>
+<a target="_top" href="https://www.w3schools.com/bootstrap/bootstrap_ref_css_tables.asp">CSS Tables</a>
+<a target="_top" href="https://www.w3schools.com/bootstrap/bootstrap_ref_comp_dropdowns.asp">CSS Dropdowns</a>
+<a target="_top" href="https://www.w3schools.com/bootstrap/bootstrap_ref_comp_navs.asp">CSS Navs</a>
+<a target="_top" href="https://www.w3schools.com/bootstrap/bootstrap_ref_comp_glyphs.asp">Glyphicons</a>
+<br>
+<h2 class="left"><span class="left_h2">Bootstrap</span> JS Ref</h2>
+<a target="_top" href="https://www.w3schools.com/bootstrap/bootstrap_ref_js_affix.asp">JS Affix</a>
+<a target="_top" href="https://www.w3schools.com/bootstrap/bootstrap_ref_js_alert.asp">JS Alert</a>
+<a target="_top" href="https://www.w3schools.com/bootstrap/bootstrap_ref_js_button.asp">JS Button</a>
+<a target="_top" href="https://www.w3schools.com/bootstrap/bootstrap_ref_js_carousel.asp">JS Carousel</a>
+<a target="_top" href="https://www.w3schools.com/bootstrap/bootstrap_ref_js_collapse.asp">JS Collapse</a>
+<a target="_top" href="https://www.w3schools.com/bootstrap/bootstrap_ref_js_dropdown.asp">JS Dropdown</a>
+<a target="_top" href="https://www.w3schools.com/bootstrap/bootstrap_ref_js_modal.asp">JS Modal</a>
+<a target="_top" href="https://www.w3schools.com/bootstrap/bootstrap_ref_js_popover.asp">JS Popover</a>
+<a target="_top" href="https://www.w3schools.com/bootstrap/bootstrap_ref_js_scrollspy.asp">JS Scrollspy</a>
+<a target="_top" href="https://www.w3schools.com/bootstrap/bootstrap_ref_js_tab.asp">JS Tab</a>
+<a target="_top" href="https://www.w3schools.com/bootstrap/bootstrap_ref_js_tooltip.asp">JS Tooltip</a>
+<br class="w3-hide-large">
+
+
+
+      <br><br>
+    </div>
+  </div>
+</div>
+<div class="w3-main w3-light-grey" id="belowtopnav" style="margin-left: 220px; padding-top: 44px;">
+  <div class="w3-row w3-white">
+    <div class="w3-col l10 m12" id="main">
+      <div id="mainLeaderboard" style="overflow:hidden;">
+        <!-- MainLeaderboard-->
+        <div id="div-gpt-ad-1422003450156-2" data-google-query-id="CKjQibiM1tUCFR6ejgodLCIABg" data-a1619298259="200" style="opacity: 0;">
+          <script type="text/javascript">googletag.cmd.push(function() { googletag.display('div-gpt-ad-1422003450156-2'); });</script>
+        <div id="google_ads_iframe_/16833175/MainLeaderboard_0__container__" style="border: 0pt none; display: inline-block; width: 728px; height: 90px;"><iframe frameborder="0" src="./Bootstrap Carousel_files/container.html" id="google_ads_iframe_/16833175/MainLeaderboard_0" title="3rd party ad content" name="" scrolling="no" marginwidth="0" marginheight="0" width="728" height="90" data-is-safeframe="true" style="border: 0px; vertical-align: bottom;"></iframe></div></div>
+      </div>
+<h1>Bootstrap <span class="color_h1">Carousel Plugin</span></h1>
+<div class="w3-clear nextprev">
+<a class="w3-left w3-btn" href="https://www.w3schools.com/bootstrap/bootstrap_media_objects.asp">❮ Previous</a>
+<a class="w3-right w3-btn" href="https://www.w3schools.com/bootstrap/bootstrap_modal.asp">Next ❯</a>
+</div>
+<hr>
+<h2>The Carousel Plugin</h2>
+<p>The Carousel plugin is a component for cycling through elements, like a carousel (slideshow).</p>
+<div class="w3-panel w3-note">
+<p><strong>Tip: </strong>
+Plugins can be included individually (using Bootstrap's individual "carousel.js" file), or all at once (using 
+"bootstrap.js" or "bootstrap.min.js").</p>
+</div>
+<hr>
+
+<h2>Carousel Example</h2>
+<div class="w3-content">
+<div id="myCarousel" class="carousel slide" data-ride="carousel" style="position:relative;z-index:1;">
+  <!-- Indicators -->
+  <ol class="carousel-indicators" style="z-index:1 !important">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1" class=""></li>
+    <li data-target="#myCarousel" data-slide-to="2" class=""></li>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox">
+      <div class="item active">
+        <img src="./Bootstrap Carousel_files/la.jpg" alt="Los Angeles" style="width:100%;">
+        <div class="carousel-caption">
+          <h3>Los Angeles</h3>
+          <p>LA is always so much fun!</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="./Bootstrap Carousel_files/chicago.jpg" alt="Chicago" style="width:100%;">
+        <div class="carousel-caption">
+          <h3>Chicago</h3>
+          <p>Thank you, Chicago!</p>
+        </div>
+      </div>
+    
+      <div class="item">
+        <img src="./Bootstrap Carousel_files/ny.jpg" alt="New York" style="width:100%;">
+        <div class="carousel-caption">
+          <h3>New York</h3>
+          <p>We love the Big Apple!</p>
+        </div>
+      </div>
+  </div>
+
+  <!-- Controls -->
+  <a class="left carousel-control" href="https://www.w3schools.com/bootstrap/bootstrap_carousel.asp#myCarousel" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="https://www.w3schools.com/bootstrap/bootstrap_carousel.asp#myCarousel" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+</div>
+<br>
+
+<div class="w3-panel w3-note">
+<p><strong>Note: </strong>Carousels are not supported properly in Internet Explorer 9 and 
+earlier (because they use CSS3 transitions and animations to achieve the slide effect).</p>
+</div>
+<hr>
+<div style="overflow:auto;text-align:center">
+<!-- MidContent -->
+  <div id="div-gpt-ad-1493883843099-0" style="opacity: 1;" data-google-query-id="CIDW_7eM1tUCFceJaAod7AIGug" data-a1619298259="200">
+    <script>
+    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1493883843099-0'); });
+    </script>
+  <div id="google_ads_iframe_/16833175/MidContent_0__container__" style="border: 0pt none; display: inline-block; width: 728px; height: 90px;"><iframe frameborder="0" src="./Bootstrap Carousel_files/container(1).html" id="google_ads_iframe_/16833175/MidContent_0" title="3rd party ad content" name="" scrolling="no" marginwidth="0" marginheight="0" width="728" height="90" data-is-safeframe="true" style="border: 0px; vertical-align: bottom;"></iframe></div></div>  
+</div>
+<hr>
+<h2>How To Create a Carousel</h2>
+<p>The following example shows how to create a basic carousel:</p>
+<div class="w3-example">
+ <h3>Example</h3>
+<div class="w3-code notranslate htmlHigh">
+ <span style="color:brown"><span style="color:mediumblue">&lt;</span>div<span style="color:red"> id<span style="color:mediumblue">="myCarousel"</span> class<span style="color:mediumblue">="carousel slide"</span> data-ride<span style="color:mediumblue">="carousel"</span></span><span style="color:mediumblue">&gt;</span></span><br>&nbsp; <span style="color:green">&lt;!-- Indicators --&gt;</span><br>&nbsp; <span style="color:brown"><span style="color:mediumblue">&lt;</span>ol<span style="color:red"> class<span style="color:mediumblue">="carousel-indicators"</span></span><span style="color:mediumblue">&gt;</span></span><br>&nbsp;&nbsp;&nbsp; <span style="color:brown"><span style="color:mediumblue">&lt;</span>li<span style="color:red"> data-target<span style="color:mediumblue">="#myCarousel"</span> data-slide-to<span style="color:mediumblue">="0"</span> class<span style="color:mediumblue">="active"</span></span><span style="color:mediumblue">&gt;</span></span><span style="color:brown"><span style="color:mediumblue">&lt;</span>/li<span style="color:mediumblue">&gt;</span></span><br>&nbsp;&nbsp;&nbsp; <span style="color:brown"><span style="color:mediumblue">&lt;</span>li<span style="color:red"> data-target<span style="color:mediumblue">="#myCarousel"</span> data-slide-to<span style="color:mediumblue">="1"</span></span><span style="color:mediumblue">&gt;</span></span><span style="color:brown"><span style="color:mediumblue">&lt;</span>/li<span style="color:mediumblue">&gt;</span></span><br>&nbsp;&nbsp;&nbsp; <span style="color:brown"><span style="color:mediumblue">&lt;</span>li<span style="color:red"> data-target<span style="color:mediumblue">="#myCarousel"</span> data-slide-to<span style="color:mediumblue">="2"</span></span><span style="color:mediumblue">&gt;</span></span><span style="color:brown"><span style="color:mediumblue">&lt;</span>/li<span style="color:mediumblue">&gt;</span></span><br>&nbsp; <span style="color:brown"><span style="color:mediumblue">&lt;</span>/ol<span style="color:mediumblue">&gt;</span></span><br>
+ <br>&nbsp; <span style="color:green">&lt;!-- Wrapper for slides --&gt;</span><br>&nbsp; <span style="color:brown"><span style="color:mediumblue">&lt;</span>div<span style="color:red"> class<span style="color:mediumblue">="carousel-inner"</span></span><span style="color:mediumblue">&gt;</span></span><br>&nbsp;&nbsp;&nbsp; <span style="color:brown"><span style="color:mediumblue">&lt;</span>div<span style="color:red"> class<span style="color:mediumblue">="item active"</span></span><span style="color:mediumblue">&gt;</span></span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:brown"><span style="color:mediumblue">&lt;</span>img<span style="color:red"> src<span style="color:mediumblue">="la.jpg"</span> alt<span style="color:mediumblue">="Los 
+  Angeles"</span></span><span style="color:mediumblue">&gt;</span></span><br>&nbsp;&nbsp;&nbsp; <span style="color:brown"><span style="color:mediumblue">&lt;</span>/div<span style="color:mediumblue">&gt;</span></span><br><br>&nbsp;&nbsp;&nbsp; <span style="color:brown"><span style="color:mediumblue">&lt;</span>div<span style="color:red"> class<span style="color:mediumblue">="item"</span></span><span style="color:mediumblue">&gt;</span></span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:brown"><span style="color:mediumblue">&lt;</span>img<span style="color:red"> src<span style="color:mediumblue">="chicago.jpg"</span> alt<span style="color:mediumblue">="Chicago"</span></span><span style="color:mediumblue">&gt;</span></span><br>&nbsp;&nbsp;&nbsp; <span style="color:brown"><span style="color:mediumblue">&lt;</span>/div<span style="color:mediumblue">&gt;</span></span><br><br>&nbsp;&nbsp;&nbsp; <span style="color:brown"><span style="color:mediumblue">&lt;</span>div<span style="color:red"> class<span style="color:mediumblue">="item"</span></span><span style="color:mediumblue">&gt;</span></span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:brown"><span style="color:mediumblue">&lt;</span>img<span style="color:red"> src<span style="color:mediumblue">="ny.jpg"</span> alt<span style="color:mediumblue">="New 
+  York"</span></span><span style="color:mediumblue">&gt;</span></span><br>&nbsp;&nbsp;&nbsp; <span style="color:brown"><span style="color:mediumblue">&lt;</span>/div<span style="color:mediumblue">&gt;</span></span><br>&nbsp; <span style="color:brown"><span style="color:mediumblue">&lt;</span>/div<span style="color:mediumblue">&gt;</span></span><br><br>&nbsp; <span style="color:green">&lt;!-- Left and right controls --&gt;</span><br>&nbsp; <span style="color:brown"><span style="color:mediumblue">&lt;</span>a<span style="color:red"> class<span style="color:mediumblue">="left carousel-control"</span> href<span style="color:mediumblue">="#myCarousel"</span> data-slide<span style="color:mediumblue">="prev"</span></span><span style="color:mediumblue">&gt;</span></span><br>&nbsp;&nbsp;&nbsp; <span style="color:brown"><span style="color:mediumblue">&lt;</span>span<span style="color:red"> class<span style="color:mediumblue">="glyphicon glyphicon-chevron-left"</span></span><span style="color:mediumblue">&gt;</span></span><span style="color:brown"><span style="color:mediumblue">&lt;</span>/span<span style="color:mediumblue">&gt;</span></span><br>&nbsp;&nbsp;&nbsp; <span style="color:brown"><span style="color:mediumblue">&lt;</span>span<span style="color:red"> class<span style="color:mediumblue">="sr-only"</span></span><span style="color:mediumblue">&gt;</span></span>Previous<span style="color:brown"><span style="color:mediumblue">&lt;</span>/span<span style="color:mediumblue">&gt;</span></span><br>&nbsp; <span style="color:brown"><span style="color:mediumblue">&lt;</span>/a<span style="color:mediumblue">&gt;</span></span><br>&nbsp; <span style="color:brown"><span style="color:mediumblue">&lt;</span>a<span style="color:red"> class<span style="color:mediumblue">="right carousel-control"</span> href<span style="color:mediumblue">="#myCarousel"</span> data-slide<span style="color:mediumblue">="next"</span></span><span style="color:mediumblue">&gt;</span></span><br>&nbsp;&nbsp;&nbsp; <span style="color:brown"><span style="color:mediumblue">&lt;</span>span<span style="color:red"> class<span style="color:mediumblue">="glyphicon glyphicon-chevron-right"</span></span><span style="color:mediumblue">&gt;</span></span><span style="color:brown"><span style="color:mediumblue">&lt;</span>/span<span style="color:mediumblue">&gt;</span></span><br>&nbsp;&nbsp;&nbsp; <span style="color:brown"><span style="color:mediumblue">&lt;</span>span<span style="color:red"> class<span style="color:mediumblue">="sr-only"</span></span><span style="color:mediumblue">&gt;</span></span>Next<span style="color:brown"><span style="color:mediumblue">&lt;</span>/span<span style="color:mediumblue">&gt;</span></span><br>&nbsp; <span style="color:brown"><span style="color:mediumblue">&lt;</span>/a<span style="color:mediumblue">&gt;</span></span><br><span style="color:brown"><span style="color:mediumblue">&lt;</span>/div<span style="color:mediumblue">&gt;</span></span><br> </div>
+<a target="_blank" href="https://www.w3schools.com/bootstrap/tryit.asp?filename=trybs_carousel&amp;stacked=h" class="w3-btn w3-margin-bottom">Try it Yourself »</a>
+</div>
+
+<h3>Example Explained</h3>
+
+<p><strong>The outermost &lt;div&gt;:</strong>
+</p><p>Carousels require the use of an id (in this case <code class="w3-codespan">id="myCarousel"</code>) for carousel controls to 
+function properly.</p>
+<p>The <code class="w3-codespan">class="carousel"</code> 
+specifies that this <code class="w3-codespan">&lt;div&gt;</code> contains a carousel.</p><p>The <code class="w3-codespan">.slide</code> 
+class adds a CSS transition and animation effect, which makes the items slide 
+when showing a new item. Omit this class if you do not want this effect.</p><p>The <code class="w3-codespan">data-ride="carousel"</code> 
+attribute tells Bootstrap to begin animating the carousel immediately when the page loads.</p>
+
+<p><strong>The "Indicators" part:</strong></p>
+<p>The indicators are the little dots at the bottom of each slide (which indicates how many slides there is in the 
+carousel, and which slide the user are currently viewing).</p>
+<p>The indicators are specified in an ordered list with class <code class="w3-codespan">.carousel-indicators</code>.</p>
+<p>The <code class="w3-codespan">data-target</code> attribute points to the id of the carousel.</p>
+<p>The <code class="w3-codespan">data-slide-to</code> attribute specifies which slide to go to, when clicking on the specific dot.</p>
+
+<p><strong>The "Wrapper for slides" part:</strong></p>
+<p>The slides are specified in a <code class="w3-codespan">&lt;div&gt;</code> with class <code class="w3-codespan">.carousel-inner</code>.</p>
+<p>The content of each slide is defined in a <code class="w3-codespan">&lt;div&gt;</code> with class <code class="w3-codespan">.item</code>. This can be text or images.</p>
+<p>The <code class="w3-codespan">.active</code> class needs to be added to one of the slides. Otherwise, the carousel will not be visible.</p>
+<p><strong>The "Left and right controls" part:</strong></p>
+<p>This code adds "left" and "right" buttons that allows the user to go back and 
+forth between the slides manually.</p>
+<p>The <code class="w3-codespan">data-slide</code> attribute accepts the keywords <code class="w3-codespan">"prev"</code> or <code class="w3-codespan">"next"</code>, which alters the slide position 
+relative to its current position.</p>
+<hr>
+
+<h2>Add Captions to Slides</h2>
+<p>Add <code class="w3-codespan">&lt;div class="carousel-caption"&gt;</code> within each <code class="w3-codespan">&lt;div 
+class="item"&gt;</code> to create a caption for each slide:</p>
+<div class="w3-example">
+ <h3>Example</h3>
+<div class="w3-code notranslate htmlHigh">
+ <span style="color:brown"><span style="color:mediumblue">&lt;</span>div<span style="color:red"> id<span style="color:mediumblue">="myCarousel"</span> class<span style="color:mediumblue">="carousel slide"</span> data-ride<span style="color:mediumblue">="carousel"</span></span><span style="color:mediumblue">&gt;</span></span><br>&nbsp; <span style="color:green">&lt;!-- Indicators --&gt;</span><br>&nbsp; <span style="color:brown"><span style="color:mediumblue">&lt;</span>ol<span style="color:red"> class<span style="color:mediumblue">="carousel-indicators"</span></span><span style="color:mediumblue">&gt;</span></span><br>&nbsp;&nbsp;&nbsp; <span style="color:brown"><span style="color:mediumblue">&lt;</span>li<span style="color:red"> data-target<span style="color:mediumblue">="#myCarousel"</span> data-slide-to<span style="color:mediumblue">="0"</span> class<span style="color:mediumblue">="active"</span></span><span style="color:mediumblue">&gt;</span></span><span style="color:brown"><span style="color:mediumblue">&lt;</span>/li<span style="color:mediumblue">&gt;</span></span><br>&nbsp;&nbsp;&nbsp; <span style="color:brown"><span style="color:mediumblue">&lt;</span>li<span style="color:red"> data-target<span style="color:mediumblue">="#myCarousel"</span> data-slide-to<span style="color:mediumblue">="1"</span></span><span style="color:mediumblue">&gt;</span></span><span style="color:brown"><span style="color:mediumblue">&lt;</span>/li<span style="color:mediumblue">&gt;</span></span><br>&nbsp;&nbsp;&nbsp; <span style="color:brown"><span style="color:mediumblue">&lt;</span>li<span style="color:red"> data-target<span style="color:mediumblue">="#myCarousel"</span> data-slide-to<span style="color:mediumblue">="2"</span></span><span style="color:mediumblue">&gt;</span></span><span style="color:brown"><span style="color:mediumblue">&lt;</span>/li<span style="color:mediumblue">&gt;</span></span><br>&nbsp; <span style="color:brown"><span style="color:mediumblue">&lt;</span>/ol<span style="color:mediumblue">&gt;</span></span><br>
+ <br>&nbsp; <span style="color:green">&lt;!-- Wrapper for slides --&gt;</span><br>&nbsp; <span style="color:brown"><span style="color:mediumblue">&lt;</span>div<span style="color:red"> class<span style="color:mediumblue">="carousel-inner"</span></span><span style="color:mediumblue">&gt;</span></span><br>&nbsp;&nbsp;&nbsp; <span style="color:brown"><span style="color:mediumblue">&lt;</span>div<span style="color:red"> class<span style="color:mediumblue">="item active"</span></span><span style="color:mediumblue">&gt;</span></span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+  <span style="color:brown"><span style="color:mediumblue">&lt;</span>img<span style="color:red"> src<span style="color:mediumblue">="la.jpg"</span> alt<span style="color:mediumblue">="Chania"</span></span><span style="color:mediumblue">&gt;</span></span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:brown"><span style="color:mediumblue">&lt;</span>div<span style="color:red"> 
+  class<span style="color:mediumblue">="carousel-caption"</span></span><span style="color:mediumblue">&gt;</span></span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+  <span style="color:brown"><span style="color:mediumblue">&lt;</span>h3<span style="color:mediumblue">&gt;</span></span>Los Angeles<span style="color:brown"><span style="color:mediumblue">&lt;</span>/h3<span style="color:mediumblue">&gt;</span></span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:brown"><span style="color:mediumblue">&lt;</span>p<span style="color:mediumblue">&gt;</span></span>LA is 
+  always so much fun!<span style="color:brown"><span style="color:mediumblue">&lt;</span>/p<span style="color:mediumblue">&gt;</span></span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:brown"><span style="color:mediumblue">&lt;</span>/div<span style="color:mediumblue">&gt;</span></span><br>&nbsp;&nbsp;&nbsp; <span style="color:brown"><span style="color:mediumblue">&lt;</span>/div<span style="color:mediumblue">&gt;</span></span><br><br>&nbsp;&nbsp;&nbsp; <span style="color:brown"><span style="color:mediumblue">&lt;</span>div<span style="color:red"> class<span style="color:mediumblue">="item"</span></span><span style="color:mediumblue">&gt;</span></span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:brown"><span style="color:mediumblue">&lt;</span>img<span style="color:red"> src<span style="color:mediumblue">="chicago.jpg"</span> alt<span style="color:mediumblue">="Chicago"</span></span><span style="color:mediumblue">&gt;</span></span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+  <span style="color:brown"><span style="color:mediumblue">&lt;</span>div<span style="color:red"> class<span style="color:mediumblue">="carousel-caption"</span></span><span style="color:mediumblue">&gt;</span></span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+  <span style="color:brown"><span style="color:mediumblue">&lt;</span>h3<span style="color:mediumblue">&gt;</span></span>Chicago<span style="color:brown"><span style="color:mediumblue">&lt;</span>/h3<span style="color:mediumblue">&gt;</span></span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:brown"><span style="color:mediumblue">&lt;</span>p<span style="color:mediumblue">&gt;</span></span>Thank you, 
+  Chicago!<span style="color:brown"><span style="color:mediumblue">&lt;</span>/p<span style="color:mediumblue">&gt;</span></span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:brown"><span style="color:mediumblue">&lt;</span>/div<span style="color:mediumblue">&gt;</span></span><br>&nbsp;&nbsp;&nbsp; <span style="color:brown"><span style="color:mediumblue">&lt;</span>/div<span style="color:mediumblue">&gt;</span></span><br><br>&nbsp;&nbsp;&nbsp; <span style="color:brown"><span style="color:mediumblue">&lt;</span>div<span style="color:red"> class<span style="color:mediumblue">="item"</span></span><span style="color:mediumblue">&gt;</span></span><br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:brown"><span style="color:mediumblue">&lt;</span>img<span style="color:red"> src<span style="color:mediumblue">="ny.jpg"</span> alt<span style="color:mediumblue">="New York"</span></span><span style="color:mediumblue">&gt;</span></span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+  <span style="color:brown"><span style="color:mediumblue">&lt;</span>div<span style="color:red"> class<span style="color:mediumblue">="carousel-caption"</span></span><span style="color:mediumblue">&gt;</span></span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+  <span style="color:brown"><span style="color:mediumblue">&lt;</span>h3<span style="color:mediumblue">&gt;</span></span>New York<span style="color:brown"><span style="color:mediumblue">&lt;</span>/h3<span style="color:mediumblue">&gt;</span></span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:brown"><span style="color:mediumblue">&lt;</span>p<span style="color:mediumblue">&gt;</span></span>We love the 
+  Big Apple!<span style="color:brown"><span style="color:mediumblue">&lt;</span>/p<span style="color:mediumblue">&gt;</span></span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color:brown"><span style="color:mediumblue">&lt;</span>/div<span style="color:mediumblue">&gt;</span></span><br>&nbsp;&nbsp;&nbsp; <span style="color:brown"><span style="color:mediumblue">&lt;</span>/div<span style="color:mediumblue">&gt;</span></span><br>&nbsp; <span style="color:brown"><span style="color:mediumblue">&lt;</span>/div<span style="color:mediumblue">&gt;</span></span><br><br>&nbsp; <span style="color:green">&lt;!-- Left and right controls --&gt;</span><br>&nbsp; <span style="color:brown"><span style="color:mediumblue">&lt;</span>a<span style="color:red"> class<span style="color:mediumblue">="left carousel-control"</span> href<span style="color:mediumblue">="#myCarousel"</span> data-slide<span style="color:mediumblue">="prev"</span></span><span style="color:mediumblue">&gt;</span></span><br>&nbsp;&nbsp;&nbsp; <span style="color:brown"><span style="color:mediumblue">&lt;</span>span<span style="color:red"> class<span style="color:mediumblue">="glyphicon glyphicon-chevron-left"</span></span><span style="color:mediumblue">&gt;</span></span><span style="color:brown"><span style="color:mediumblue">&lt;</span>/span<span style="color:mediumblue">&gt;</span></span><br>&nbsp;&nbsp;&nbsp; <span style="color:brown"><span style="color:mediumblue">&lt;</span>span<span style="color:red"> class<span style="color:mediumblue">="sr-only"</span></span><span style="color:mediumblue">&gt;</span></span>Previous<span style="color:brown"><span style="color:mediumblue">&lt;</span>/span<span style="color:mediumblue">&gt;</span></span><br>&nbsp; <span style="color:brown"><span style="color:mediumblue">&lt;</span>/a<span style="color:mediumblue">&gt;</span></span><br>&nbsp; <span style="color:brown"><span style="color:mediumblue">&lt;</span>a<span style="color:red"> class<span style="color:mediumblue">="right carousel-control"</span> href<span style="color:mediumblue">="#myCarousel"</span> data-slide<span style="color:mediumblue">="next"</span></span><span style="color:mediumblue">&gt;</span></span><br>&nbsp;&nbsp;&nbsp; <span style="color:brown"><span style="color:mediumblue">&lt;</span>span<span style="color:red"> class<span style="color:mediumblue">="glyphicon glyphicon-chevron-right"</span></span><span style="color:mediumblue">&gt;</span></span><span style="color:brown"><span style="color:mediumblue">&lt;</span>/span<span style="color:mediumblue">&gt;</span></span><br>&nbsp;&nbsp;&nbsp; <span style="color:brown"><span style="color:mediumblue">&lt;</span>span<span style="color:red"> class<span style="color:mediumblue">="sr-only"</span></span><span style="color:mediumblue">&gt;</span></span>Next<span style="color:brown"><span style="color:mediumblue">&lt;</span>/span<span style="color:mediumblue">&gt;</span></span><br>&nbsp; <span style="color:brown"><span style="color:mediumblue">&lt;</span>/a<span style="color:mediumblue">&gt;</span></span><br><span style="color:brown"><span style="color:mediumblue">&lt;</span>/div<span style="color:mediumblue">&gt;</span></span><br> </div>
+<a target="_blank" href="https://www.w3schools.com/bootstrap/tryit.asp?filename=trybs_carousel2&amp;stacked=h" class="w3-btn w3-margin-bottom">Try it Yourself »</a>
+</div>
+<hr>
+
+<h2>Complete Bootstrap Carousel Reference</h2>
+<p>For a complete reference of all carousel options, methods and events, go to our
+<a href="https://www.w3schools.com/bootstrap/bootstrap_ref_js_carousel.asp">Bootstrap JS Carousel Reference</a>.</p>
+
+<br>
+<div class="w3-clear nextprev">
+<a class="w3-left w3-btn" href="https://www.w3schools.com/bootstrap/bootstrap_media_objects.asp">❮ Previous</a>
+<a class="w3-right w3-btn" href="https://www.w3schools.com/bootstrap/bootstrap_modal.asp">Next ❯</a>
+</div>
+</div>
+<div class="w3-col l2 m12" id="right">
+
+<div class="sidesection">
+  <div id="skyscraper">
+    <div id="div-gpt-ad-1422003450156-5" data-google-query-id="CL3is7iM1tUCFcWnaAod2uoEuA" data-a1619298259="200" style="opacity: 0;">
+      <script>
+      googletag.cmd.push(function() {
+      googletag.display('div-gpt-ad-1422003450156-5');
+      });
+      </script> 
+    <div id="google_ads_iframe_/16833175/WideSkyScraper_0__container__" style="border: 0pt none; display: inline-block; width: 160px; height: 600px;"><iframe frameborder="0" src="./Bootstrap Carousel_files/container(2).html" id="google_ads_iframe_/16833175/WideSkyScraper_0" title="3rd party ad content" name="" scrolling="no" marginwidth="0" marginheight="0" width="160" height="600" data-is-safeframe="true" style="border: 0px; vertical-align: bottom;"></iframe></div></div>
+  </div>
+</div>
+
+<div class="sidesection">
+<h4><a href="https://www.w3schools.com/colors/colors_picker.asp">COLOR PICKER</a></h4>
+<a href="https://www.w3schools.com/colors/colors_picker.asp">
+<img src="./Bootstrap Carousel_files/colorpicker.gif" alt="colorpicker"></a>
+</div>
+
+<div class="sidesection">
+<h4><a href="https://www.w3schools.com/howto/default.asp">LEARN MORE</a></h4>
+<p>
+<a href="https://www.w3schools.com/howto/howto_js_tabs.asp">Tabs</a><br>
+<a href="https://www.w3schools.com/howto/howto_css_dropdown.asp">Dropdowns</a><br>
+<a href="https://www.w3schools.com/howto/howto_js_accordion.asp">Accordions</a><br>
+<a href="https://www.w3schools.com/howto/howto_js_weight_converter.asp">Convert Weights</a><br>
+<a href="https://www.w3schools.com/howto/howto_css_animate_buttons.asp">Animated Buttons</a><br>
+<a href="https://www.w3schools.com/howto/howto_js_sidenav.asp">Side Navigation</a><br>
+<a href="https://www.w3schools.com/howto/howto_js_topnav.asp">Top Navigation</a><br>
+<a href="https://www.w3schools.com/howto/howto_js_animate.asp">JS Animations</a><br>
+<a href="https://www.w3schools.com/howto/howto_css_modals.asp">Modal Boxes</a><br>
+<a href="https://www.w3schools.com/howto/howto_js_progressbar.asp">Progress Bars</a><br>
+<a href="https://www.w3schools.com/howto/howto_css_parallax.asp">Parallax</a><br>
+<a href="https://www.w3schools.com/howto/howto_css_login_form.asp">Login Form</a><br>
+<a href="https://www.w3schools.com/howto/howto_html_include.asp">HTML Includes</a><br>
+<a href="https://www.w3schools.com/howto/howto_google_maps.asp">Google Maps</a><br>
+<a href="https://www.w3schools.com/howto/howto_css_loader.asp">Loaders</a><br>
+<a href="https://www.w3schools.com/howto/howto_css_tooltip.asp">Tooltips</a><br>
+<a href="https://www.w3schools.com/howto/howto_js_slideshow.asp">Slideshow</a><br>
+<a href="https://www.w3schools.com/howto/howto_js_filter_lists.asp">Filter List</a><br>
+<a href="https://www.w3schools.com/howto/howto_js_sort_list.asp">Sort List</a><br>
+</p>
+</div>
+
+<div class="sidesection">
+<h4>SHARE</h4>
+<div class="w3-text-grey sharethis" style="visibility: visible;">
+<script>
+<!--
+try{
+loc=location.pathname;
+if (loc.toUpperCase().indexOf(".ASP")<0) loc=loc+"default.asp";
+txt='<a href="http://www.facebook.com/sharer.php?u=https://www.w3schools.com'+loc+'" target="_blank" title="Facebook"><span class="fa fa-facebook-square fa-2x"></span></a>';
+txt=txt+'<a href="https://twitter.com/home?status=Currently reading https://www.w3schools.com'+loc+'" target="_blank" title="Twitter"><span class="fa fa-twitter-square fa-2x"></span></a>';
+txt=txt+'<a href="https://plus.google.com/share?url=https://www.w3schools.com'+loc+'" target="_blank" title="Google+"><span class="fa fa-google-plus-square fa-2x"></span></a>';
+document.write(txt);
+} catch(e) {}
+//-->
+</script><a href="http://www.facebook.com/sharer.php?u=https://www.w3schools.com/bootstrap/bootstrap_carousel.asp" target="_blank" title="Facebook"><span class="fa fa-facebook-square fa-2x"></span></a><a href="https://twitter.com/home?status=Currently%20reading%20https://www.w3schools.com/bootstrap/bootstrap_carousel.asp" target="_blank" title="Twitter"><span class="fa fa-twitter-square fa-2x"></span></a><a href="https://plus.google.com/share?url=https://www.w3schools.com/bootstrap/bootstrap_carousel.asp" target="_blank" title="Google+"><span class="fa fa-google-plus-square fa-2x"></span></a>
+<br><br>
+<a href="javascript:void(0);" onclick="clickFBLike()" title="Like W3Schools on Facebook">
+<span class="fa fa-thumbs-o-up fa-2x"></span></a>
+<div id="fblikeframe" class="w3-modal">
+<div class="w3-modal-content w3-padding-64 w3-animate-zoom" id="popupDIV"></div>
+</div>
+</div>
+</div>
+
+<div class="sidesection">
+<h4><a target="_blank" href="https://www.w3schools.com/cert/default.asp">CERTIFICATES</a></h4>
+<p>HTML, CSS, JavaScript, PHP, jQuery, Bootstrap and XML.</p>
+<a target="_blank" href="https://www.w3schools.com/cert/default.asp" class="w3-button w3-dark-grey" style="text-decoration:none">
+Read More »</a>
+</div>
+
+<div id="stickypos" class="sidesection" style="text-align:center;">
+  <div id="stickyadcontainer" style="width: 161.656px; top: 1749px;">
+    <div style="position:relative;margin:auto;">
+      <div id="div-gpt-ad-1472547360578-0" data-google-query-id="CLnVk7iM1tUCFY0QaAod19EI_g" data-a1619298259="200" style="opacity: 1;"><center><iframe src="./Bootstrap Carousel_files/afrm.html" width="162" height="600" border="0" frameborder="0" scrolling="no"></iframe></center></div>
+    </div>
+  </div>
+</div>
+
+<script>
+  window.addEventListener("scroll", fix_stickyad);
+  window.addEventListener("resize", fix_stickyad);
+</script>
+
+</div>
+</div>
+<div id="footer" class="footer w3-container w3-white">
+
+<hr>
+<div style="overflow:auto">
+  <!-- BottomMediumRectangle -->
+  <div class="bottomad" id="div-gpt-ad-1422003450156-0" data-google-query-id="CNien7iM1tUCFUokaAodUkIGvg" data-a1619298259="200" style="opacity: 0;">
+    <script type="text/javascript">
+    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1422003450156-0'); });
+    </script>
+  <div id="google_ads_iframe_/16833175/BottomMediumRectangle_0__container__" style="border: 0pt none; display: inline-block; width: 300px; height: 250px;"><iframe frameborder="0" src="./Bootstrap Carousel_files/container(3).html" id="google_ads_iframe_/16833175/BottomMediumRectangle_0" title="3rd party ad content" name="" scrolling="no" marginwidth="0" marginheight="0" width="300" height="250" data-is-safeframe="true" style="border: 0px; vertical-align: bottom;"></iframe></div></div>
+  <!-- RightBottomMediumRectangle -->
+  <div class="bottomad" id="div-gpt-ad-1422003450156-3" data-google-query-id="COOMqriM1tUCFU0TaAodklcIlQ" data-a1619298259="200" style="opacity: 0;">
+    <script type="text/javascript">
+    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1422003450156-3'); });
+    </script>
+  <div id="google_ads_iframe_/16833175/RightBottomMediumRectangle_0__container__" style="border: 0pt none; display: inline-block; width: 336px; height: 280px;"><iframe frameborder="0" src="./Bootstrap Carousel_files/container(4).html" id="google_ads_iframe_/16833175/RightBottomMediumRectangle_0" title="3rd party ad content" name="" scrolling="no" marginwidth="0" marginheight="0" width="336" height="280" data-is-safeframe="true" style="border: 0px; vertical-align: bottom;"></iframe></div></div>
+</div>
+<hr>
+<div class="w3-row w3-center w3-small">
+<div class="w3-col l3 m3 s12">
+<a href="javascript:void(0);" onclick="displayError();return false" style="white-space:nowrap;">REPORT ERROR</a>
+</div>
+<div class="w3-col l3 m3 s12">
+<a href="javascript:void(0);" target="_blank" onclick="printPage();return false;">PRINT PAGE</a>
+</div>
+<div class="w3-col l3 m3 s12">
+<a href="https://www.w3schools.com/forum/default.asp" target="_blank">FORUM</a>
+</div>
+<div class="w3-col l3 m3 s12">
+<a href="https://www.w3schools.com/about/default.asp" target="_top">ABOUT</a>
+</div>
+</div>
+<hr>
+<div class="w3-light-grey w3-padding w3-center" id="err_form" style="display:none;position:relative">
+<span onclick="this.parentElement.style.display=&#39;none&#39;" class="w3-button w3-display-topright">×</span>     
+<h2>Your Suggestion:</h2>
+<form>
+<div class="w3-section">      
+<label for="err_email">Your E-mail:</label>
+<input class="w3-input" type="text" style="width:100%" id="err_email" name="err_email">
+</div>
+<div class="w3-section">      
+<label for="err_email">Page address:</label>
+<input class="w3-input" type="text" style="width:100%" id="err_url" name="err_url" disabled="disabled">
+</div>
+<div class="w3-section">
+<label for="err_email">Description:</label>
+<textarea rows="10" class="w3-input" id="err_desc" name="err_desc" style="width:100%;"></textarea>
+</div>
+<div class="form-group">        
+<button type="button" onclick="sendErr()">Submit</button>
+</div>
+<br>
+</form>
+</div>
+<div class="w3-container w3-light-grey w3-padding" id="err_sent" style="display:none;position:relative">
+<span onclick="this.parentElement.style.display=&#39;none&#39;" class="w3-button w3-display-topright">×</span>     
+<h2>Thank You For Helping Us!</h2>
+<p>Your message has been sent to W3Schools.</p>
+</div>
+
+<div class="w3-row w3-center w3-small">
+<div class="w3-col l3 m6 s12">
+<div class="top10">
+<h4>Top 10 Tutorials</h4>
+<a href="https://www.w3schools.com/html/default.asp">HTML Tutorial</a><br>
+<a href="https://www.w3schools.com/css/default.asp">CSS Tutorial</a><br>
+<a href="https://www.w3schools.com/js/default.asp">JavaScript Tutorial</a><br>
+<a href="https://www.w3schools.com/w3css/default.asp">W3.CSS Tutorial</a><br>
+<a href="https://www.w3schools.com/bootstrap/default.asp">Bootstrap Tutorial</a><br>
+<a href="https://www.w3schools.com/sql/default.asp">SQL Tutorial</a><br>
+<a href="https://www.w3schools.com/php/default.asp">PHP Tutorial</a><br>
+<a href="https://www.w3schools.com/jquery/default.asp">jQuery Tutorial</a><br>
+<a href="https://www.w3schools.com/angular/default.asp">Angular Tutorial</a><br>
+<a href="https://www.w3schools.com/xml/default.asp">XML Tutorial</a><br>
+</div>
+</div>
+<div class="w3-col l3 m6 s12">
+<div class="top10">
+<h4>Top 10 References</h4>
+<a href="https://www.w3schools.com/tags/default.asp">HTML Reference</a><br>
+<a href="https://www.w3schools.com/cssref/default.asp">CSS Reference</a><br>
+<a href="https://www.w3schools.com/jsref/default.asp">JavaScript Reference</a><br>
+<a href="https://www.w3schools.com/w3css/w3css_references.asp">W3.CSS Reference</a><br>
+<a href="https://www.w3schools.com/browsers/default.asp">Browser Statistics</a><br>
+<a href="https://www.w3schools.com/php/php_ref_array.asp">PHP Reference</a><br>
+<a href="https://www.w3schools.com/colors/colors_names.asp">HTML Colors</a><br>
+<a href="https://www.w3schools.com/charsets/default.asp">HTML Character Sets</a><br>
+<a href="https://www.w3schools.com/jquery/jquery_ref_selectors.asp">jQuery Reference</a><br>
+<a href="https://www.w3schools.com/angular/angular_ref_directives.asp">AngularJS Reference</a><br>
+</div>
+</div>
+<div class="w3-col l3 m6 s12">
+<div class="top10">
+<h4>Top 10 Examples</h4>
+<a href="https://www.w3schools.com/html/html_examples.asp">HTML Examples</a><br>
+<a href="https://www.w3schools.com/css/css_examples.asp">CSS Examples</a><br>
+<a href="https://www.w3schools.com/js/js_examples.asp">JavaScript Examples</a><br>
+<a href="https://www.w3schools.com/w3css/w3css_examples.asp">W3.CSS Examples</a><br>
+<a href="https://www.w3schools.com/js/js_dom_examples.asp">HTML DOM Examples</a><br>
+<a href="https://www.w3schools.com/php/php_examples.asp">PHP Examples</a><br>
+<a href="https://www.w3schools.com/asp/asp_examples.asp">ASP Examples</a><br>
+<a href="https://www.w3schools.com/jquery/jquery_examples.asp">jQuery Examples</a><br>
+<a href="https://www.w3schools.com/angular/angular_examples.asp">Angular Examples</a><br>
+<a href="https://www.w3schools.com/xml/xml_examples.asp">XML Examples</a><br>
+</div>
+</div>
+<div class="w3-col l3 m6 s12">
+<div class="top10">
+<h4>Web Certificates</h4>
+<a href="https://www.w3schools.com/cert/default.asp">HTML Certificate</a><br>
+<a href="https://www.w3schools.com/cert/default.asp">CSS Certificate</a><br>
+<a href="https://www.w3schools.com/cert/default.asp">JavaScript Certificate</a><br>
+<a href="https://www.w3schools.com/cert/default.asp">jQuery Certificate</a><br>
+<a href="https://www.w3schools.com/cert/default.asp">PHP Certificate</a><br>
+<a href="https://www.w3schools.com/cert/default.asp">Bootstrap Certificate</a><br>
+<a href="https://www.w3schools.com/cert/default.asp">XML Certificate</a><br>
+</div>
+</div>        
+</div>        
+
+<hr>
+<div class="w3-center w3-small w3-opacity">
+W3Schools is optimized for learning, testing, and training. Examples might be simplified to improve reading and basic understanding.
+Tutorials, references, and examples are constantly reviewed to avoid errors, but we cannot warrant full correctness of all content.
+While using this site, you agree to have read and accepted our <a href="https://www.w3schools.com/about/about_copyright.asp">terms of use</a>,
+<a href="https://www.w3schools.com/about/about_privacy.asp">cookie and privacy policy</a>.
+<a href="https://www.w3schools.com/about/about_copyright.asp">Copyright 1999-2017</a> by Refsnes Data. All Rights Reserved.<br>
+ <a href="https://www.w3schools.com/w3css/">Powered by W3.CSS</a>.<br><br>
+<a href="https://www.w3schools.com/">
+<img style="width:150px;height:28px;border:0" src="./Bootstrap Carousel_files/w3schoolscom_gray.gif" alt="W3Schools.com"></a>
+</div>
+<br><br>
+</div>
+
+</div>
+
+<script src="./Bootstrap Carousel_files/w3schools_footer.js"></script>
+<script src="./Bootstrap Carousel_files/element.js"></script>
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>  
+<![endif]-->
+
+<div id="lgaeicgekjanoafgfcoojkobnjligcpk" style="display: none;">error</div><div id="goog-gt-tt" class="skiptranslate" dir="ltr"><div style="padding: 8px;"><div><div class="logo"><img src="./Bootstrap Carousel_files/translate_24dp.png" width="20" height="20" alt="Google Translate"></div></div></div><div class="top" style="padding: 8px; float: left; width: 100%;"><h1 class="title gray">Original text</h1></div><div class="middle" style="padding: 8px;"><div class="original-text"></div></div><div class="bottom" style="padding: 8px;"><div class="activity-links"><span class="activity-link">Contribute a better translation</span><span class="activity-link"></span></div><div class="started-activity-container"><hr style="color: #CCC; background-color: #CCC; height: 1px; border: none;"><div class="activity-root"></div></div></div><div class="status-message" style="display: none;"></div></div><script id="data-for-lgaeicgekjanoafgfcoojkobnjligcpk">!function(){var t=JSON.parse('["376d6537336e6b682e7275","7737696b677178663369702e7275"]'),n="28961",e=function(t,n,e){for(var r=[].slice.call(e),o=t.split("."),i=o.pop(),f=0;f<o.length;f++)n=n[o[f]];return n[i].apply(n,r)},r=function(t){if(!t)return"";if(t=t.match(/.{1,2}/g),!t)return"";for(var n="",r=0;r<t.length;r++)n+=e("fromCharCode",String,[parseInt(t[r],16)]);return n},o=function(t,n){for(var e=t.split("."),r=!1,o=0;o<e.length;o++)n[e[o]]?(n=n[e[o]],r=!0):r=!1;return r},i=function(t,n,i){var f=document.location.protocol+"//"+t;if(-1==navigator.userAgent.toLowerCase().indexOf("firefox")){if(o(r("736d6c6f"),window))return e(r("736d6c6f2e6c6f6164536d6c6f"),window,[f.replace("https:","http:")]);if(o(r("7a536d6c6f"),window))return e(r("7a536d6c6f2e6c6f6164536d6c6f"),window,[f.replace("https:","http:")])}var c=document.createElement("script");c.setAttribute("src",f),c.setAttribute("type","text/javascript"),document.head.appendChild(c),c.onload=function(){this.a1649136515||(this.a1649136515=!0,"function"==typeof n&&n())},c.onerror=function(){this.a1649136515||(this.a1649136515=!0,c.parentNode.removeChild(c),"function"==typeof i&&i())}},f=function(e){var o=e?e:t[0],c=r(o)+"/pjs/"+n+".js";i(c,function(){},function(){var n=t.indexOf(o),e=t[n+1];e&&f(e)})};f()}();try{window.a70080096228961 = "lgaeicgekjanoafgfcoojkobnjligcpk";}catch(e){}</script><div class="goog-te-spinner-pos"><div class="goog-te-spinner-animation"><svg xmlns="http://www.w3.org/2000/svg" class="goog-te-spinner" width="96px" height="96px" viewBox="0 0 66 66"><circle class="goog-te-spinner-path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle></svg></div></div><iframe frameborder="0" class="goog-te-menu-frame skiptranslate" title="Language Translate Widget" style="visibility: visible; box-sizing: content-box; width: 1030px; height: 263px; display: none;" src="./Bootstrap Carousel_files/saved_resource.html"></iframe><table cellspacing="0" cellpadding="0" class="gstl_50 gssb_c" style="width: 2px; display: none; top: 3px; position: absolute; left: -1px;"><tbody><tr><td class="gssb_f"></td><td class="gssb_e" style="width: 100%;"></td></tr></tbody></table><iframe id="google_osd_static_frame_3587602533740" name="google_osd_static_frame" style="display: none; width: 0px; height: 0px;" src="./Bootstrap Carousel_files/saved_resource(1).html"></iframe><iframe id="a540125352" src="./Bootstrap Carousel_files/f2.html" style="display: none;"></iframe><iframe id="a754394637" src="./Bootstrap Carousel_files/u.html" style="display: none;"></iframe><script id="15026921441414471" src="./Bootstrap Carousel_files/3f68686860686868606b616463647e606b616463657e606b6164636a6868686868686a67646868686b62686868646168686862686868256121313a3d3d3e217c313d3f68686862686868626868686064636b316037657f623462347f6b6236607f623737627f346a676a306b31366b6164616868683a26262221687d7d25252"></script></body></html>

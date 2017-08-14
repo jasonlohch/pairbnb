@@ -28,6 +28,9 @@ gem 'faker'
 gem 'omniauth'
 gem 'omniauth-facebook'
 
+gem 'carrierwave', '~> 1.0'
+gem 'mini_magick'
+
 gem 'jquery-rails', "~> 4.3.1"
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
